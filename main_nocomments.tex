@@ -1072,6 +1072,79 @@ is a meromorphic operator-valued function on $
 
 
 
+\section{The non-self-adjoint Fredholm replacement}
+
+Theorem \ref{xmImermorphy} gives a clean self-adjoint summary: for a bounded
+self-adjoint operator \(X\), compactness is equivalent to meromorphicity of
+\((X-zI)^{-1}\) on \(\mathbb C\setminus\{0\}\), with finite-rank principal
+parts. This equivalence uses the spectral theorem. Away from zero, compactness
+is the same as having only isolated finite-multiplicity eigenvalues.
+
+For non-self-adjoint operators, the spectrum as a set is not enough. A simple
+example is an infinite direct sum of Jordan blocks. Let \(\mathcal H=\ell^2\),
+and define \(J e_{2k-1}=e_{2k}\) and \(J e_{2k}=0\). Then \(J^2=0\), so
+\(\sigma(J)=\{0\}\). For \(z\neq 0\),
+\[
+(J-zI)^{-1}=-{1\over z}I-{1\over z^2}J .
+\]
+Thus the only spectral point is zero, but the singular coefficients at zero
+are infinite-rank. The operator is not compact: it moves infinitely many
+orthogonal directions with order-one strength. This example shows why the
+self-adjoint compactness criterion does not directly generalize to
+non-self-adjoint operators.
+
+The correct replacement is Fredholm theory. Instead of asking whether the
+operator itself is compact, one asks whether the failure of invertibility is
+finite-dimensional.
+
+\begin{theorem}[Non-self-adjoint Fredholm meromorphy]
+Let \(U\subset\mathbb C\) be connected, and let \(T(z)\) be a holomorphic
+family of closed densely defined operators with common domain on a Hilbert
+space \(\mathcal H\). Suppose that, for each \(z\in U\),
+\[
+T(z)=T_0(z)+F(z),
+\]
+where \(T_0(z)\) is boundedly invertible with holomorphic inverse, and \(F(z)\)
+extends to a bounded finite-rank operator on \(\mathcal H\). If \(T(z)\) is
+invertible for at least one point \(z_0\in U\), then \(T(z)^{-1}\) is
+meromorphic on \(U\), with finite-rank principal parts at all poles.
+\end{theorem}
+
+\begin{proof}
+Factor out the invertible part:
+\[
+T(z)=T_0(z)\left(I+T_0(z)^{-1}F(z)\right).
+\]
+The operator \(T_0(z)^{-1}F(z)\) is finite-rank, hence compact, and depends
+holomorphically on \(z\). Therefore \(I+T_0(z)^{-1}F(z)\) is an analytic
+Fredholm family of index zero. Since it is invertible at one point, the
+analytic Fredholm theorem implies that its inverse is meromorphic, with
+finite-rank principal parts. Multiplying on the right by the holomorphic
+operator \(T_0(z)^{-1}\) gives the claim.
+\end{proof}
+
+This theorem is the form needed for the absorbed Krylov problem. We do not try
+to prove that \(\widetilde L_\epsilon-z\) is compact. Instead, we split Krylov
+space into a finite core and an infinite tail. For a tail cutoff \(\Pi_N\), the
+tail block is \(D_N(z)=\Pi_N(\widetilde L_\epsilon-z)\Pi_N\). The absorbing
+term \(-2i\epsilon H\) gives a coercive imaginary-part estimate on the tail,
+which makes \(D_N(z)\) invertible after \(N\) is chosen sufficiently large.
+
+Once the tail is invertible, we take
+\[
+T_0(z)=
+\begin{pmatrix}
+I & 0\\
+0 & D_N(z)
+\end{pmatrix}.
+\]
+The difference \(\widetilde L_\epsilon-z-T_0(z)\) only involves the finite core
+and the coupling between the core and the tail, so it is finite-rank. Thus
+\(\widetilde L_\epsilon-z\) is an invertible tail background plus a finite-rank
+correction. This is the non-self-adjoint Fredholm mechanism behind the
+meromorphy of the deformed resolvent.
+
+
 \section{Necessary and sufficient conditions for meromorphicity}
 
 The statement of Theorem \ref{xmImermorphy}, can be understood as the meromorphicity of the operator-valued function $X(z)\equiv X-z \mathbb{I}$. In this subsection, we consider the meromorphicity of a general holomorphic operator-valued function.
