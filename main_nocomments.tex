@@ -1073,98 +1073,92 @@ If the operator $X$ is self-adjoint, the statements above are equivalent to $X$ 
 
 The statement above connects compactness to meromorphicity for self-adjoint
 operators. For a non-self-adjoint operator \(X\), compactness is not the right
-criterion. A useful sufficient condition is that, after removing a finite core,
-the tail resolvent is already controlled.
+criterion. The right replacement is Fredholm theory: the obstruction to
+invertibility should be finite-dimensional.
 
-\begin{theorem}[Finite-core criterion for meromorphic resolvent]
+\begin{theorem}[Finite-dimensional reduction criterion]
 Let \(X\) be a closed densely defined operator on a Hilbert space
-\(\mathcal H\). Suppose that
-\[
-\mathcal H=\mathcal H_{\mathrm c}\oplus\mathcal H_{\mathrm t},
-\qquad
-\dim \mathcal H_{\mathrm c}<\infty ,
-\]
-and write
-\[
-X-zI=
-\begin{pmatrix}
-A(z) & B(z)\\
-C(z) & D(z)
-\end{pmatrix}.
-\]
-Let \(U\subset\mathbb C\) be open. Assume that the tail block
-\(D(z):\mathcal H_{\mathrm t}\to\mathcal H_{\mathrm t}\) is boundedly
-invertible for every \(z\in U\), and that \(D(z)^{-1}\) is holomorphic in
-\(z\). Then \(X-zI\) is Fredholm of index \(0\) for every \(z\in U\).
+\(\mathcal H\), and let \(U\subset\mathbb C\) be open. Regard
+\(X-zI\) as a bounded operator from \(\operatorname{Dom}(X)\), equipped with
+the graph norm, to \(\mathcal H\). Then the following are equivalent:
 
-Moreover, if \(X-z_0I\) is invertible for at least one point \(z_0\in U\), then
-the resolvent \((X-zI)^{-1}\) is meromorphic on \(U\), with finite-rank
-principal parts at its poles.
-\end{theorem}
+\begin{enumerate}
+\item For every \(z\in U\), the operator \(X-zI\) is Fredholm of index \(0\).
 
-\begin{proof}
-Since \(D(z)\) is invertible, define
-\[
-T_0(z)=
-\begin{pmatrix}
-I & 0\\
-0 & D(z)
-\end{pmatrix}.
-\]
-Then \(T_0(z)\) is invertible with holomorphic inverse, and
-\[
-X-zI=T_0(z)+F(z),
-\qquad
-F(z)=
-\begin{pmatrix}
-A(z)-I & B(z)\\
-C(z) & 0
-\end{pmatrix}.
-\]
-The operator \(F(z)\) is finite-rank, because every nonzero block either starts
-from or lands in the finite-dimensional core \(\mathcal H_{\mathrm c}\). Thus
-\(X-zI\) is an invertible operator plus a finite-rank perturbation, and hence
-is Fredholm of index \(0\). If \(X-z_0I\) is invertible for one \(z_0\in U\),
-the analytic Fredholm theorem implies that \((X-zI)^{-1}\) is meromorphic on
-\(U\), with finite-rank principal parts.
-\end{proof}
-
-There is also a local converse, but it is less constructive. It says that if
-\(X-zI\) is already known to be Fredholm of index zero, then one can split off
-some finite-dimensional obstruction. It does not say that this obstruction is
-the original Krylov core, nor that the complement is the large-\(n\) tail.
-
-\begin{theorem}[Local converse: Fredholm reduction for a resolvent]
-Let \(X\) be a closed densely defined operator on \(\mathcal H\), and let
-\(U\subset\mathbb C\) be open. Suppose that \(X-zI\), as an operator from
-\(\operatorname{Dom}(X)\) to \(\mathcal H\), is Fredholm of index \(0\) for
-every \(z\in U\). Fix \(z_\ast\in U\). Then, after possibly shrinking \(U\) to
-a neighborhood of \(z_\ast\), there are finite-dimensional subspaces
+\item For every \(z_\ast\in U\), after possibly shrinking \(U\) to a
+neighborhood \(V\) of \(z_\ast\), there are finite-dimensional subspaces
 \(E\subset\operatorname{Dom}(X)\) and \(F\subset\mathcal H\), together with
 closed complements \(\mathcal M\subset\operatorname{Dom}(X)\) and
 \(\mathcal N\subset\mathcal H\), such that
 \[
 \operatorname{Dom}(X)=E\oplus\mathcal M,
 \qquad
-\mathcal H=F\oplus\mathcal N .
+\mathcal H=F\oplus\mathcal N,
+\qquad
+\dim E=\dim F .
 \]
-Here \(\operatorname{Dom}(X)\) is equipped with the graph norm. With respect to
-these decompositions,
+With respect to these decompositions,
 \[
 X-zI=
 \begin{pmatrix}
 A(z)&B(z)\\
 C(z)&D(z)
 \end{pmatrix},
+\qquad z\in V,
 \]
-where \(D(z):\mathcal M\to\mathcal N\) is boundedly invertible and \(D(z)^{-1}\)
-is holomorphic in \(z\). Consequently, the failure of invertibility of
-\(X-zI\) is locally controlled by a finite-dimensional Schur complement.
+where \(D(z):\mathcal M\to\mathcal N\) is boundedly invertible and
+\(D(z)^{-1}\) is holomorphic in \(z\).
+\end{enumerate}
+
+Consequently, if \(U\) is connected and \(X-z_0I\) is invertible for at least
+one \(z_0\in U\), then \((X-zI)^{-1}\) is meromorphic on \(U\), with
+finite-rank principal parts at its poles.
 \end{theorem}
 
-Thus Theorem B.1 gives a concrete sufficient criterion, while the converse is
-abstract. In the Krylov problem the absorbing potential supplies the stronger
-input: it identifies the natural large-\(n\) tail as the invertible block.
+\begin{proof}
+First assume the local decomposition in item 2. Define
+\(T_0(z)\) by choosing any isomorphism \(J:E\to F\) and setting
+\[
+T_0(z)=
+\begin{pmatrix}
+J & 0\\
+0 & D(z)
+\end{pmatrix}.
+\]
+Then \(T_0(z)\) is invertible with holomorphic inverse, and
+\[
+X-zI=T_0(z)+
+\begin{pmatrix}
+A(z)-J & B(z)\\
+C(z) & 0
+\end{pmatrix}.
+\]
+The second term is finite-rank, because every nonzero block either starts from
+or lands in the finite-dimensional spaces \(E\) or \(F\). Thus \(X-zI\) is
+Fredholm of index \(0\) locally, and hence for every \(z\in U\).
+
+Conversely, assume that \(X-zI\) is Fredholm of index \(0\) for every
+\(z\in U\), and fix \(z_\ast\in U\). Let \(T_\ast=X-z_\ast I\). Since
+\(T_\ast\) is Fredholm, \(\ker T_\ast\) is finite-dimensional and
+\(\operatorname{Ran}T_\ast\) is closed with finite-dimensional cokernel. Choose
+\(E=\ker T_\ast\), choose a closed complement
+\(\mathcal M\subset\operatorname{Dom}(X)\), set
+\(\mathcal N=\operatorname{Ran}T_\ast\), and choose a finite-dimensional
+complement \(F\) so that \(\mathcal H=F\oplus\mathcal N\). The restriction
+\(T_\ast:\mathcal M\to\mathcal N\) is bijective, hence boundedly invertible by
+the open mapping theorem. Therefore the corresponding block \(D(z)\) is
+invertible for \(z\) close to \(z_\ast\), and \(D(z)^{-1}\) is holomorphic by
+the Neumann series.
+
+The final meromorphicity statement is the analytic Fredholm theorem applied to
+the holomorphic Fredholm family \(X-zI\).
+\end{proof}
+
+The converse direction is abstract: it does not say that the finite-dimensional
+obstruction is the original Krylov core, nor that the complement is the
+large-\(n\) tail. In the Krylov problem the absorbing potential supplies the
+stronger input: it identifies the natural large-\(n\) tail as the invertible
+block.
 
 
 \section{The non-self-adjoint Fredholm replacement}
