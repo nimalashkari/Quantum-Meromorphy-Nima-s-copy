@@ -1164,33 +1164,20 @@ Note that the converse of the result above does not hold: there are operators, e
 
 \begin{theorem}
 Let \(D\subset\mathbb C\) be connected, and let
-\[
-K(z):\mathcal H\to\mathcal H
-\]
+$K(z):\mathcal H\to\mathcal H$
 be a holomorphic family of bounded operators. Assume that \(K(z)\) is
-self-adjoint on the real slice, in the sense that
-\[
-K(\overline z)=K(z)^\ast .
-\]
-Suppose also that for each \(\lambda\neq 0\), the operator
-\[
-I-\lambda K(z)
-\]
-is invertible for at least one \(z\in D\).
-
-Then the following are equivalent:
-
-\[
-K(z)\text{ is compact for every }z\in D,
-\]
-
-and
-
-\[
-(I-\lambda K(z))^{-1}
-\]
+self-adjoint on the real slice, in the sense that $
+K(\overline z)=K(z)^\ast $.
+Suppose also that for each \(\lambda\neq 0\), the operator $
+I-\lambda K(z)$
+is invertible for at least one \(z\in D\). Then the following are equivalent: 
+\begin{enumerate}
+    \item $K(z)\text{ is compact for every }z\in D$
+\item $
+(I-\lambda K(z))^{-1}$
 is meromorphic on \(D\), with finite-rank principal parts at its poles, for
 every \(\lambda\neq 0\).
+\end{enumerate}
 \end{theorem}
 
 
@@ -1203,10 +1190,7 @@ T(z)=T_0(z)+K(z),
 \]
 where \(T_0(z)\) is a holomorphic family of boundedly invertible operators and
 \(K(z)\) is a holomorphic compact operator family. If \(T(z)\) is invertible for
-at least one point \(z_0\in D\), then
-\[
-T(z)^{-1}
-\]
+at least one point \(z_0\in D\), then $T(z)^{-1}$
 is meromorphic on \(D\). Moreover, the principal part at each pole is
 finite-rank.
 \end{theorem}
@@ -1216,14 +1200,8 @@ Factor out the invertible background:
 \[
 T(z)=T_0(z)\left(I+T_0(z)^{-1}K(z)\right).
 \]
-The family
-\[
-T_0(z)^{-1}K(z)
-\]
-is holomorphic and compact. Hence
-\[
-I+T_0(z)^{-1}K(z)
-\]
+The family $T_0(z)^{-1}K(z)$
+is holomorphic and compact. Hence $I+T_0(z)^{-1}K(z)$
 is an analytic Fredholm family of index \(0\). Since \(T(z)\) is invertible at
 one point, the analytic Fredholm theorem implies that
 \[
@@ -1259,17 +1237,16 @@ For \(\epsilon>0\), define
 \widetilde L_\epsilon=L-2i\epsilon H .
 \]
 
-\textbf{Proposition:}
+\begin{theorem}
 Suppose that there exists \(N_0\) such that \(b_{n+1}\ge b_n\) for
 \(n\ge N_0\), and suppose in addition that
 \[
 h_n=b_{n+1}^2-b_n^2\longrightarrow +\infty .
 \]
 Then for every \(\epsilon>0\), the resolvent
-\[
-(\widetilde L_\epsilon-z)^{-1}
-\]
+$(\widetilde L_\epsilon-z)^{-1}$
 is meromorphic on \(\mathbb C\).
+\end{theorem}
 
 
 \begin{proof}
