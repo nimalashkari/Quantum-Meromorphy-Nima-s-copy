@@ -1129,6 +1129,43 @@ the analytic Fredholm theorem implies that \((X-zI)^{-1}\) is meromorphic on
 \(U\), with finite-rank principal parts.
 \end{proof}
 
+There is also a local converse, but it is less constructive. It says that if
+\(X-zI\) is already known to be Fredholm of index zero, then one can split off
+some finite-dimensional obstruction. It does not say that this obstruction is
+the original Krylov core, nor that the complement is the large-\(n\) tail.
+
+\begin{theorem}[Local converse: Fredholm reduction for a resolvent]
+Let \(X\) be a closed densely defined operator on \(\mathcal H\), and let
+\(U\subset\mathbb C\) be open. Suppose that \(X-zI\), as an operator from
+\(\operatorname{Dom}(X)\) to \(\mathcal H\), is Fredholm of index \(0\) for
+every \(z\in U\). Fix \(z_\ast\in U\). Then, after possibly shrinking \(U\) to
+a neighborhood of \(z_\ast\), there are finite-dimensional subspaces
+\(E\subset\operatorname{Dom}(X)\) and \(F\subset\mathcal H\), together with
+closed complements \(\mathcal M\subset\operatorname{Dom}(X)\) and
+\(\mathcal N\subset\mathcal H\), such that
+\[
+\operatorname{Dom}(X)=E\oplus\mathcal M,
+\qquad
+\mathcal H=F\oplus\mathcal N .
+\]
+Here \(\operatorname{Dom}(X)\) is equipped with the graph norm. With respect to
+these decompositions,
+\[
+X-zI=
+\begin{pmatrix}
+A(z)&B(z)\\
+C(z)&D(z)
+\end{pmatrix},
+\]
+where \(D(z):\mathcal M\to\mathcal N\) is boundedly invertible and \(D(z)^{-1}\)
+is holomorphic in \(z\). Consequently, the failure of invertibility of
+\(X-zI\) is locally controlled by a finite-dimensional Schur complement.
+\end{theorem}
+
+Thus Theorem B.1 gives a concrete sufficient criterion, while the converse is
+abstract. In the Krylov problem the absorbing potential supplies the stronger
+input: it identifies the natural large-\(n\) tail as the invertible block.
+
 
 \section{The non-self-adjoint Fredholm replacement}
 
