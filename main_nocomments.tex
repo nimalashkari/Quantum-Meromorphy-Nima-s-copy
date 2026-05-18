@@ -1069,7 +1069,37 @@ is a meromorphic operator-valued function on $
 \end{theorem}
 
 
+\section{Resolvent of non-self-adjoint operators}
 
+The statement above connects the Fredholm property to compactness for self-adjoint operators. More generally, for a non-self-adjoint operator, the relation between Fredholmness and compactness is more complicated. In the following, we will need the following theorem:
+
+\begin{theorem}[Finite-core Fredholm criterion]
+Let \(U\subset\mathbb C\) be open, and let \(T(z)\) be a holomorphic family of
+closed operators on a Hilbert space \(\mathcal H\). Suppose that
+\[
+\mathcal H=\mathcal H_{\mathrm c}\oplus\mathcal H_{\mathrm t},
+\qquad
+\dim \mathcal H_{\mathrm c}<\infty ,
+\]
+and that, with respect to this decomposition,
+\[
+T(z)=
+\begin{pmatrix}
+A(z) & B(z)\\
+C(z) & D(z)
+\end{pmatrix}.
+\]
+Assume that the tail block \(D(z):\mathcal H_{\mathrm t}\to\mathcal H_{\mathrm t}\)
+is boundedly invertible for every \(z\in U\), and that \(D(z)^{-1}\) is
+holomorphic in \(z\). Then \(T(z)\) is Fredholm of index \(0\) for every
+\(z\in U\).
+
+Moreover, if \(T(z)\) is invertible for at least one point \(z_0\in U\), then
+\[
+T(z)^{-1}
+\]
+is meromorphic on \(U\), with finite-rank principal parts at its poles.
+\end{theorem}
 
 
 \section{The non-self-adjoint Fredholm replacement}
