@@ -935,10 +935,8 @@ particle Hamiltonian
 \[
 H_{\mathrm{free}}=-\frac{\hbar^2}{2m}\Delta
 \]
-on \(L^2(\mathbb R^d)\) has
-\[
-\sigma(H_{\mathrm{free}})=[0,\infty).
-\]
+on \(L^2(\mathbb R^d)\) has $
+\sigma(H_{\mathrm{free}})=[0,\infty)$.
 The formal eigenstates are plane waves
 \[
 e^{ik\cdot x},
@@ -992,17 +990,7 @@ states. Such an embedded eigenvalue may have finite multiplicity, but it is not
 isolated from the rest of the spectrum, so it is essential rather than
 discrete.
 
-So, for self-adjoint operators, the essential spectrum contains:
-\[
-\text{continuous spectrum},
-\]
-\[
-\text{eigenvalues of infinite multiplicity},
-\]
-and
-\[
-\text{eigenvalues that are not isolated, such as embedded eigenvalues}.
-\]
+So, for self-adjoint operators, the essential spectrum contains: continuous spectrum, eigenvalues of infinite multiplicity, and eigenvalues that are not isolated.
 
 A familiar mixed example is the hydrogen atom. Its Hamiltonian has negative
 bound-state energies
@@ -1052,75 +1040,11 @@ measure has a density with respect to Lebesgue measure:
 d\mu_\psi(\lambda)=\rho_\psi(\lambda)\,d\lambda .
 \]
 The corresponding spectral subspace is called the absolutely continuous
-subspace, and the associated spectrum is denoted
-\[
-\sigma_{\mathrm{ac}}(A).
-\]
-
-The remaining continuous part is the singular continuous spectrum,
-\[
-\sigma_{\mathrm{sc}}(A).
-\]
+subspace, and the associated spectrum is denoted $\sigma_{ac}(A)$. The remaining continuous part is the singular continuous spectrum,
+$\sigma_{\mathrm{sc}}(A)$.
 It has no eigenvalue atoms, but its spectral measure is supported on sets of
 Lebesgue measure zero. Physically, this is more exotic: it is continuous, but
-not the ordinary continuum one encounters in elementary scattering theory.
-
-For ordinary Schrödinger scattering, the absolutely continuous spectrum is the
-scattering spectrum. For example, the free Hamiltonian
-\[
-H_0=-\frac{\hbar^2}{2m}\Delta
-\]
-on \(L^2(\mathbb R^d)\) has
-\[
-\sigma(H_0)=[0,\infty),
-\]
-and this spectrum is absolutely continuous. After Fourier transform,
-\[
-H_0
-\]
-acts by multiplication:
-\[
-\widehat{H_0\psi}(k)
-=
-\frac{\hbar^2|k|^2}{2m}\widehat\psi(k).
-\]
-Thus energy is labelled continuously by the momentum \(k\). The formal
-eigenstates are plane waves
-\[
-e^{ik\cdot x},
-\]
-which are not normalizable, but wave packets built from them propagate to
-spatial infinity. This is the basic meaning of a scattering state.
-
-More generally, for
-\[
-H=H_0+V(x),
-\]
-with \(V\) sufficiently localized, the absolutely continuous subspace describes
-states that asymptotically behave like free wave packets at large positive and
-negative times. In this sense,
-\[
-\sigma_{\mathrm{ac}}(H)
-\]
-is the part of the spectrum associated with transport to infinity.
-
-Thus the useful physics dictionary is
-\[
-\text{point spectrum}
-\quad\leftrightarrow\quad
-\text{normalizable bound states},
-\]
-\[
-\text{absolutely continuous spectrum}
-\quad\leftrightarrow\quad
-\text{scattering states},
-\]
-\[
-\text{singular continuous spectrum}
-\quad\leftrightarrow\quad
-\text{exotic continuous spectral behavior}.
-\]
-For many standard short-range quantum Hamiltonians, the singular continuous
+not the ordinary continuum one encounters in elementary scattering theory. For many standard short-range quantum Hamiltonians, the singular continuous
 spectrum is absent, so the continuous spectrum is entirely absolutely
 continuous.
 
