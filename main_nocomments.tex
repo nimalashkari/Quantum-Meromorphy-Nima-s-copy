@@ -1053,25 +1053,18 @@ continuous.
 
 We said that compact operators have discrete spectra with a potential essential spectrum $\{0\}$ which if it exists must be an accumulation point. Since every other point in the spectrum is discrete, it has finite multiplicity, so the operator $\mathbb{I}-\lambda X$ for $\lambda>0$ can be inverted up to an obstruction by a finite rank matrix.
 
-\begin{theorem}
+\begin{theorem}\label{xmImermorphy}
 Let \(X=X^\ast\) be a bounded self-adjoint operator on an infinite-dimensional
 Hilbert space \(\mathcal H\). Then the following are equivalent:
 \begin{enumerate}
 \item \(X\) is compact.
 \item For every \(z\in\mathbb R\setminus\{0\}\), the operator
-\[
-X-zI
-\]
+$X-zI$
 is Fredholm of index \(0\).
 \item The resolvent
-\[
-z\mapsto (X-zI)^{-1}
-\]
-is a meromorphic operator-valued function on
-\[
-\mathbb C\setminus\{0\},
-\]
-with finite-rank principal parts at all poles.
+$z\mapsto (X-zI)^{-1}$
+is a meromorphic operator-valued function on $
+\mathbb C\setminus\{0\}$, with finite-rank principal parts at all poles.
 \end{enumerate}
 \end{theorem}
 
@@ -1081,6 +1074,7 @@ with finite-rank principal parts at all poles.
 
 \section{Necessary and sufficient conditions for meromorphicity}
 
+The statement of Theorem \ref{xmImermorphy}, can be understood as the meromorphicity of the operator-valued function $X(z)\equiv X-z \mathbb{I}$. In this subsection, we consider the meromorphicity of a general holomorphic operator-valued function.
 
 \subsection{Holomorphic compact families have meromorphic resolvents}
 
@@ -1112,7 +1106,7 @@ Equivalently, one often has the reality condition
 K(\overline z)=K(z)^\ast .
 \]
 Thus \(K(z)\) is holomorphic and compact in the complex domain, while its
-restriction to real \(z\) is a compact self-adjoint family.
+restriction to real \(z\) is a compact self-adjoint family. In the discussion below, we do not make any self-adjointness assumptions.
 
 For each fixed \(z\), compactness implies that
 \[
@@ -1124,18 +1118,14 @@ accumulation only at \(0\). In particular, if \(1\in\sigma(K(z))\), then
 
 The central consequence is the analytic Fredholm theorem.
 
-\begin{proposition}[Analytic Fredholm theorem]
+\begin{theorem}[Analytic Fredholm theorem]
 Let \(K(z)\) be a holomorphic compact operator family on a connected domain
 \(D\subset\mathbb C\). Suppose that there exists \(z_0\in D\) such that
-\[
-I-K(z_0)
-\]
+$I-K(z_0)$
 is invertible. Then
-\[
-(I-K(z))^{-1}
-\]
+$(I-K(z))^{-1}$
 is a meromorphic operator-valued function on \(D\).
-\end{proposition}
+\end{theorem}
 
 The meaning is that the inverse exists away from isolated points of \(D\), and
 near each singular point \(z_\ast\) it has a Laurent expansion
