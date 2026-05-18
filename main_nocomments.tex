@@ -1,0 +1,1464 @@
+\documentclass[JHEP,12pt]{article}
+
+\usepackage{graphics,color,soul}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{jheppub}
+\usepackage{braket}
+\usepackage{lmodern,mathtools}
+\usepackage{caption}
+%\usepackage{amsth}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsbsy,amstext, amsthm, simplewick}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usepackage{xcolor}
+
+\usepackage{caption}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{simplewick}
+ \usepackage{exscale,relsize}
+\usepackage{mathtools}
+\usepackage{comment}
+
+\usepackage[margin=1cm,labelfont={sf,bf,scriptsize},textfont={sf,scriptsize}]{caption}
+
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{prop}[lemma]{Proposition}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{thmx}{Theorem}
+\newtheorem{cor}[lemma]{Corollary}
+\newtheorem{con}[lemma]{Conjecture}
+\newtheorem{prob}[lemma]{Problem}
+\newtheorem{rem}[lemma]{Remark}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{frem}[lemma]{Final remark}
+\newtheorem{fact}[lemma]{Fact}
+\newtheorem{claim}[lemma]{Claim}
+\newtheorem{assump}[lemma]{Assumption}
+\newtheorem{exam}[lemma]{Example}
+\newtheorem{cexam}[lemma]{Counterexample}
+\newtheorem{quest}[lemma]{Question}
+
+\def\cA{\mathcal{A}}
+\def\cB{\mathcal{B}}
+\def\cC{\mathcal{C}} 
+\def\cD{\mathcal{D}}
+\def\cE{\mathcal{E}}
+\def\cF{\mathcal{F}}
+\def\cG{\mathcal{G}}
+\def\cH{\mathcal{H}}
+\def\cI{\mathcal{I}}
+\def\cJ{\mathcal{J}}
+\def\cK{\mathcal{K}}
+\def\cL{\mathcal{L}}
+\def\cM{\mathcal{M}}
+\def\cN{\mathcal{N}}
+\def\cO{\mathcal{O}}
+\def\cS{\mathcal{S}}
+\def\cT{\mathcal{T}}
+\def\cP{\mathcal{P}}
+\def\cJ{\mathcal{J}}
+\def\cW{\mathcal{W}}
+\def\cX{\mathcal{X}}
+\def\cY{\mathcal{Y}}
+\def\cZ{\mathcal{Z}}
+\def\tr{{\rm tr}}
+\def\mH{\mathcal{H}}
+
+\def\tO{\tilde{O}}
+
+
+\def\hqt{H_{q_T}}
+
+\def\bA{{\bf A}}
+\def\bB{{\bf B}}
+\def\bC{{\bf C}}
+\def\bD{{\bf D}}
+\def\bE{{\bf E}}
+\def\bF{{\bf F}}
+\def\bG{{\bf G}}
+\def\bH{{\bf H}}
+\def\bI{{\bf I}}
+\def\bJ{{\bf J}}
+\def\bK{{\bf K}}
+\def\bL{{\bf L}}
+\def\bR{{\bf R}}
+\def\bS{{\bf S}}
+\def\bV{{\bf V}}
+
+\def\ba{{\bf a}}
+\def\bb{{\bf b}}
+\def\bc{{\bf c}}
+\def\bg{{\bf g}}
+\def\bk{{\bf k}}
+\def\bp{{\bf p}}
+\def\bs{{\bf s}}
+\def\br{{\bf r}}
+\def\bv{{\bf v}}
+
+
+
+\def \la {\langle}
+\def \ra {\rangle}
+\def \p {\partial}
+\def \lam {\lambda}
+\def \e {\epsilon}
+\def \b {\bar}
+\def \t {\widetilde} 
+
+
+\def\nn{{\nonumber}}
+\def\mcdot{\!\cdot\!}
+
+\newcommand{\hard}{\mathrm{hard}}
+\newcommand{\dyn}{\mathrm{dyn}}
+\newcommand{\tree}{\mathrm{tree}}
+\newcommand{\BPS}{\mathrm{BPS}}
+
+\newcommand{\Op}{\vec{O}}
+
+\newcommand{\NL}[1]{\textcolor{blue}{#1}}
+\newcommand{\hT}{\widehat{T}}
+
+
+
+
+\def\hpo{\hat{p}_1}
+\def\hpt{\hat{p}_2}
+\def\hpos{\cancel{\hat{p}_1}}
+\def\hpts{\cancel{\hat{p}_2}}
+\def\hpob{\bar{\hat{p}}_1}
+\def\hptb{\bar{\hat{p}}_2}
+\def\hpobs{\cancel{\bar{\hat{p}}_1}}
+\def\hptbs{\cancel{\bar{\hat{p}}_2}}
+\def\imply{\quad\Longrightarrow\quad}
+\def\And{\quad {\rm and} \quad}
+\def\Or{\quad {\rm or} \quad}
+\def\For{\quad {\rm for} \quad}
+\def\Where{\quad {\rm where} \quad}
+\def\Iff{\quad \iff \quad}
+\def\Forall{\quad \text{for all }}
+\def\dg{\dagger}
+\def\Gc{\Gamma_{\rm cusp}}
+\def\dxyzint{\int_0^1 dx\,dy\,dz\, 2\delta(x+y+z-1)\,}
+\def\slash{\!\!\!/}
+\newcommand{\dint}[1]{\int \frac{d^d #1}{(2\pi)^d}\,}
+\newcommand{\dintmu}[1]{\mu^{2\epsilon}\int \frac{d^d #1}{(2\pi)^d}\,}
+\newcommand{\fint}[1]{\int \frac{d^4 #1}{(2\pi)^4}\,}
+\newcommand{\cn}[1]{\cancel{#1}}
+\newcommand{\Eq}[1]{Equation~\eqref{#1}}
+
+
+
+
+\DeclareRobustCommand{\Sec}[1]{Sec.~\ref{#1}}
+\DeclareRobustCommand{\Secs}[2]{Secs.~\ref{#1} and \ref{#2}}
+\DeclareRobustCommand{\App}[1]{App.~\ref{#1}}
+\DeclareRobustCommand{\Tab}[1]{Table~\ref{#1}}
+\DeclareRobustCommand{\Tabs}[2]{Tables~\ref{#1} and \ref{#2}}
+\DeclareRobustCommand{\Fig}[1]{Fig.~\ref{#1}}
+\DeclareRobustCommand{\Figs}[2]{Figs.~\ref{#1} and \ref{#2}}
+\DeclareRobustCommand{\Eq}[1]{Eq.~(\ref{#1})}
+\DeclareRobustCommand{\Eqs}[2]{Eqs.~(\ref{#1}) and (\ref{#2})}
+\DeclareRobustCommand{\Eqss}[3]{Eqs.~(\ref{#1}), (\ref{#2}), and (\ref{#3})}
+\DeclareRobustCommand{\Ref}[1]{Ref.~\cite{#1}}
+\DeclareRobustCommand{\Refs}[1]{Refs.~\cite{#1}}
+
+\def\be#1\ee{\begin{align}#1\end{align}}
+\def\zhat{\hat{e}_z}
+\def\xhat{\hat{e}_x}
+\def\yhat{\hat{e}_y}
+\def\phihat{\hat{e}_\phi}
+\def\rhat{\hat{e}_r}
+\def\thetahat{\hat{e}_\theta}
+\def\rhohat{\hat{e}_\rho}
+\def\musteq{\overset{!}{=}}
+
+\newcommand{\AZ}[1]{{\color{purple}[AZ: #1]\color{purple}}}
+\newcommand{\MD}[1]{\textcolor{red}{[MD: #1]}}
+\newcommand{\RK}[1]{{\color{orange}[RK: #1]\color{orange}}}
+\newcommand{\CI}[1]{{\color{green}[CI: #1]\color{green}}}
+\newcommand{\AL}[1]{\textcolor{pink}{[AL: #1]}}
+
+\begin{document}
+\section{Review of classical chaos}
+We consider a classical dynamical system, 
+\begin{align}
+\dot{z}^i(t)=F^i(z(t)).
+\end{align}
+Here $z^i$ are coordinates on phase space. Tangent vectors satisfy the equation
+\begin{align}
+e^i(t)=M^i_j(z,t)e^j(0),\hspace{10  mm}M^i_j(z,t)=\frac{\partial z^i(t)}{\partial z^j(0)}.
+\end{align}
+Given a tangent vector $e$ at the initial point $z$, we can define the Lyapunov exponent 
+\begin{align}
+\lambda(e,z)=\lim_{t\to \infty}\frac{1}{t}\log |M^i_j(z,t)e^j|,
+\end{align}
+where we have taken some norm on the tangent space.\\
+\indent Given a function $A$ on phase space and a trajectory $z(t)$, we can define the tangent vector $e_A=\{A,z\}$. In this way, we can associate a Lyapunov exponent to functions. For instance let's consider the Hamiltonian function, which generates the tangent vector $e_H=\dot{z}$. Since $\dot{z}^i=F^i(z)$ is bounded, we have 
+\begin{align}
+\lambda(e_H,z)=\lim_{t\to \infty}\frac{1}{t}\log |F(z(t))|=0.
+\end{align}
+More generally we have 
+\begin{align}
+e^i_A(t)&=\frac{\partial z^i(t)}{\partial z^j(0)}\{A,z\}^j\\
+&=\frac{\partial z^i(t)}{\partial p^j}\frac{\partial A}{\partial q^j}-\frac{\partial z^i(t)}{\partial q^j}\frac{\partial A}{\partial p^j}\\
+&=\{A,z(t)\}^i.
+\end{align}
+\indent The tangent bundle splits into unstable, stable, and neutral subspaces, 
+\begin{align}
+TM= E_u\oplus E_0\oplus E_s.
+\end{align}
+These directions can be identified by looking for vectors $e_i$ satisfying 
+\begin{align}
+M(z,t)e_i(z)=\Lambda_i(z,t)e_i(z(t)).
+\end{align}
+The vector $e_i(z(t))$ is assumed to not grow exponentially fast, so that 
+\begin{align}
+\lambda(e_i,z)=\lim_{t\to \infty}\frac{\log \Lambda_i(z,t)}{t}.
+\end{align}
+The vectors $e_i$ satisfy the Poisson bracket relation 
+\begin{align}
+[e_i, F]=\chi_i e_i, \hspace{10 mm}\chi_i=\partial_t \log \Lambda_i.
+\end{align}
+The $\chi_i$'s are the local stretching rates. \\
+\indent Observables behave under time evolution in the opposite way as tangent vectors. Suppose we have a function $A$ satisfying
+\begin{align}
+\dot{A}(z(t))=\{A(z(t)),H\}=\kappa(z,t) A(z(t))
+\end{align}
+This gives 
+\begin{align}
+A(z(t))=e^{\int_{0}^{t}\, dt'\, \kappa(z,t')}A(z(0))
+\end{align}
+It follows that 
+\begin{align}
+e_A(t)=e^{-\int_{0}^{t}dt\, \kappa(z,t')}\{A(z(t)),z(t)\},
+\end{align}
+For reasonable $A$, $\{A,z\}$ will be bounded, and we get a Lyapunov exponent 
+\begin{align}
+\lambda(e_A,z)=-\lim_{t\to \infty}\frac{1}{t}\int_{0}^{t}dt'\,\kappa(z,t')
+\end{align}
+
+\section{Hyperbolicity in operator space}
+We now try to generalize hyperbolicity to quantum systems. The problem is that we don't have a notion of the phase space. So instead of dealing with the tangent space, we will work on the operator space. We use the standard finite temperature inner product on this space, 
+\begin{align}
+(A|B)=\text{Tr}(A^\dagger e^{-\beta H/2}Be^{-\beta H/2}).
+\end{align}
+\indent Let's recall the definition of a $q$-complexity. We take $\mathcal{Q}$ to be a positive semi-definite superoperator,
+\begin{align}
+\mathcal{Q}=\sum q_a|q_a)(q_a|,\hspace{10 mm}q_a\ge 0.
+\end{align}
+We also require that $\mathcal{Q}$ does not change too much under the application of the Liouvillian $\mathcal{L}=[H,\cdot]$, 
+\begin{align}
+(q_a|\mathcal{L}|q_b)=0,\hspace{10 mm}|q_a-q_b|>M.
+\end{align}
+The $q$-complexity is the expectation value of $\mathcal{Q}$ in some state 
+\begin{align}
+Q_A(t)=(A(t)|\mathcal{Q}|A(t)).
+\end{align}
+\textbf{Example.} We take a classical Hamiltonian system with phase space $z^i$. We consider the OTOC superoperator 
+\begin{align}
+(A|\mathcal{Q}_{\text{OTOC}}|B)&=\sum_i (e_A^i|e_B^i).
+\end{align}
+Therefore $Q_{\text{OTOC},A}(t)$ gives the norm of the tangent vector $e_A^i(t)$, integrated over the phase space. \\
+\indent Suppose that the system is hyperbolic, with stable and unstable tangent bundles $E_s$ and $E_u$. Then one can choose an adapted norm in which 
+\begin{align}
+Q_{\text{OTOC},A}(t)&\ge e^{\kappa t}Q_{\text{OTOC},A}(0),\hspace{10 mm}t>0,\hspace{10 mm}e_A\in E_{u}\\
+Q_{\text{OTOC},A}(-t)&\ge e^{\kappa t}Q_{\text{OTOC},A}(0),\hspace{10 mm}t>0,\hspace{10 mm}e_A\in E_s.
+\end{align}
+This suggests the following definition away from the classical limit.\\ \\
+\textbf{Definition.} Let $\mathcal{Q}$ be a $q$-complexity, and define a localized quasi-mode to be a state with order one energy, localized on the tail of $\mathcal{Q}$, 
+\begin{align}
+|(\mathcal{L}-\omega)|A)|\sim 1,\hspace{10 mm} |(\log \mathcal{Q}-\log q)|A)|\sim1,\hspace{10 mm}\omega\sim 1,\hspace{10 mm}q\gg 1.
+\end{align}
+A system is \emph{hyperbolic} if there exists some $\mathcal{Q}$ such that the $q$-complexities of all localized quasi-modes either grow or decay exponentially,
+\begin{align}
+Q_A(t)\ge e^{\kappa t}Q_A(0)\text{ or }Q_A(-t)\ge e^{\kappa t}Q_A(0),\hspace{10 mm}t>0. \hspace{10 mm}.
+\end{align}
+\indent Now define the momentum and Hamiltonian
+\begin{align}
+\mathcal{P}=i[\mathcal{L},\mathcal{Q}],\hspace{10 mm}\mathcal{H}=i[\mathcal{L},\mathcal{P}].
+\end{align}
+We can use this superoperator to deform the Liouvillian, 
+\begin{align}\label{def}
+\tilde{\mathcal{L}}&=e^{-\epsilon \mathcal{P}}\mathcal{L}e^{\epsilon\mathcal{P}}\approx \mathcal{L}-i\epsilon \mathcal{H}.
+\end{align}
+We are now ready to state the main result.\\ \\
+\textbf{Theorem:} Suppose we have a hyperbolic system, and also suppose that on the tail we have
+\begin{align}
+[\mathcal{P},\mathcal{H}]\ll \mathcal{H}^2,\hspace{10 mm}[\mathcal{P},[\mathcal{P},\mathcal{H}]]\ll \mathcal{H}^3,\ldots
+\end{align}
+so that we can expand the exponential in $\tilde{\mathcal{L}}$. Then the resolvent 
+\begin{align}
+\left(A\left|\frac{1}{\mathcal{L}-\omega}\right|B\right)
+\end{align}
+admits an analytic continuation into a strip in the lower half plane.
+\section{Maximal chaos and radial motion}
+In general there is a degeneracy of eigenvalues of $\mathcal{Q}$. These eigenvalues mix under time evolution. Suppose, however, that we have an invariant set of states $|q_n)$, one for each eigenvalue:
+\begin{align}
+\mathcal{L}|q_n)=\sum_{m}a_{nm}|q_m).
+\end{align}
+We can then use the Lanczos algorithm to put this subspace into Krylov form, so we get a purely radial chain.\\
+\indent Now 
+\section{Purely radial motion}
+\subsection{The Krylov chain}
+The simplest example of a $q$-complexity is the Krylov complexity. For some choice of initial operator $|\mathcal{O})$, the Liouvillian generates the Krylov space spanned by $\mathcal{L}^n |\mathcal{O})$. Orthonormalising gives operators $|n)$, defined recursively by 
+\begin{align}
+|n)=b_n^{-1}(\mathcal{L}|n-1)-b_{n-1}|n-2)),
+\end{align}with the initial condition $|0)=|\mathcal{O})$. The $b_n$'s are chosen so that $(n|n)=1$. We assume that the system is chaotic, so that it satisfies the universal operator growth hypothesis, 
+\begin{align}
+b_n\sim n,\hspace{10 mm}n\to \infty.
+\end{align}
+Here we work in units where the fake temperature is $\beta_0=\pi$.\\
+\indent We can look for an eigenvector of $\mathcal{L}$ with eigenvalue $\omega$ by going to the $n$ basis, 
+\begin{align}
+|\mathcal{O}_\omega)=\sum_n \phi_\omega(n)|n),
+\end{align}
+The eigenvalue equation is then
+\begin{align}
+\omega\phi_\omega(n)&=b_{n+1}\phi_\omega(n+1)+b_n \phi_\omega(n-1),\hspace{10 mm}b_0\equiv 0.
+\end{align}
+In order to define the radial momentum, it useful to consider the tortoise coordinate
+\begin{align}
+z(n)=\sum_{m=1}^{n}\frac{1}{2b_m}.
+\end{align}
+The corresponding momentum is $\mathcal{P}=i\partial_z$, which can be discretized in a Hermitian way as
+\begin{align}
+\mathcal{P}|n)=i(b_{n+1}|n+1)-b_{n}|n-1)).
+\end{align}
+%The eigenvalue equation is then
+%\begin{align}
+%p\psi_p(n)=-ib_{n+1}\psi_p(n+1)+ib_{n}\psi_p(n-1).
+%\end{align}
+%Given an eigenfunction $\phi_\omega$ of $\mathcal{L}$, we can obtain an eigenfunction of $\mathcal{P}$ by setting $\omega=p$,
+%\begin{align}
+%\psi_p(n)=i^{n} \phi_{p}(n)
+%\end{align}
+\indent Now let's discuss the operator algebra. The commutator of $\mathcal{P}$ and $\mathcal{L}$ is 
+\begin{align}
+[\mathcal{L},\mathcal{P}]&=2i\mathcal{H},\hspace{10 mm}\mathcal{H}_{mn}=(b_{n+1}^2-b_{n}^2)\delta_{mn}.
+\end{align}
+The commutator of $\mathcal{H}$ and $\mathcal{P}$ is
+\begin{align}
+[\mathcal{H},\mathcal{P}]_{mn}=ib_n(b_{n-1}^2-2b_{n}^2+b_{n+1}^2)\delta_{m,n+1}+ib_m(b_{m-1}^2-2b_{m}^2+b_{m+1}^2)\delta_{m+1,n}
+\end{align}
+In order for the algebra to close, we then need
+\begin{align}
+\Delta^2 b_n^2\equiv b_{n-1}^{2}-2b_n^2+b_{n+1}^2=\text{constant}
+\end{align}
+The general solution with the correct large $n$ asymptotics is  
+\begin{align}
+b_n=\sqrt{n(n-1+\eta)},
+\end{align}
+and we recover the $SL(2,\mathbf{R})$ algebra 
+\begin{align}
+[\mathcal{L},\mathcal{P}]=2i\mathcal{H},\hspace{5 mm}[\mathcal{H},\mathcal{P}]=2i\mathcal{L},\hspace{5 mm}[\mathcal{L},\mathcal{H}]=2i\mathcal{P}.
+\end{align}
+In general, the algebra does not close. But let's assume that the $b_n$'s are sufficiently smooth,
+\begin{align}
+b_n=n+cn^{\alpha}+\ldots,\hspace{10 mm}\alpha<1.
+\end{align}
+Then the algebra closes at large $n$. So an $SL(2,\mathbf{R})$ emerges near the horizon.\\
+\indent We can construct Green's functions
+\begin{align}
+G^{\pm}_\omega(n,m)=\left(n\left|\frac{1}{\mathcal{L}-\omega\pm i \epsilon}\right|m\right).
+\end{align}
+These satisfy
+\begin{align}
+b_{n+1}G^{\pm}_\omega(n+1,m)+b_n G^{\pm}_\omega(n-1,m)-\omega G^{\pm}_\omega(n,m)=\delta_{nm}.
+\end{align}
+The solution is 
+\begin{align}
+G^{\pm}_\omega(n,m)=\frac{1}{W(\phi^{\pm},\phi^{0})}(\phi^{\pm}_\omega(n)\phi^0_\omega(m)\theta(n-m)+\phi^\pm_\omega(m)\phi^0_\omega(n)\theta(m-n)),
+\end{align}
+where $W$ is the Wronskian and $\phi^{\pm}$ and $\phi^0$ satisfy appropriate boundary conditions at $n=\infty$ and $n=0$ respectively. The normalizable solution can be expressed in terms of $\phi^{\pm}$, 
+\begin{align}
+\phi^0_\omega=W(\phi^{+}_\omega,\phi^0_\omega)
+\end{align}
+\indent We can be more explicit in the case where $b_n$ is smooth. Then we have 
+\begin{align}
+\phi^{\pm}_\omega(n)&\sim i^{\pm  n }n^{-\frac{1}{2}\mp \frac{i\omega}{2}},\hspace{10 mm}n\to \infty\\
+\phi^0_\omega&\sim\frac{1}{\pi\sqrt{n}}(f(-\omega)i^{-n}n^{\frac{i\omega}{2}}+f(\omega)i^{n}n^{-\frac{i\omega}{2}})
+\end{align}
+\begin{align}
+G^{\pm}(n,m)=\frac{1}{\sqrt{nm}}n^{-\frac{1}{2}}
+\end{align}
+\subsection{Hyperbolicity}
+\indent For purely radial motion, the hyperbolicity constraint simplifies drastically. Assuming hyperbolicity, we have 
+\begin{align}
+\ddot{N}_A(0)\ge \kappa N_A(0).
+\end{align}
+In order for this to be satisfied on all quasimodes, we must have
+\begin{align}
+\mathcal{H}\ge \kappa \mathcal{N}\text{ on the tail}.
+\end{align}
+In particular, 
+\begin{align}
+\Delta b_n^2\ge \kappa n,\hspace{10 mm}n\to \infty,
+\end{align}
+where $\Delta b_n^2=b_{n+1}^2-b_n^2$ is the discrete derivative. This constraint is satisfied for any sufficiently smooth $b_n$. But it does not require smoothness. For instance we could have 
+\begin{align}
+b_n\sim n+\frac{(-1)^n}{n},\hspace{10 mm}n\to \infty.
+\end{align}
+\indent Next we construct the quasi-modes. We write these as 
+\begin{align}
+|\phi^{\pm})=\frac{1}{\mathcal{L}-\omega\pm i\epsilon}|\phi).
+\end{align}
+These satisfy 
+\begin{align}
+(\mathcal{L}-\omega)|\phi^{\pm})=|\phi).
+\end{align}
+so we want to take $\phi$ to be a normalizable wavepacket. Then the wave function is 
+\begin{align}
+(n|\phi^{\pm})=\sum_m G_{\pm}(n,m)\phi(m),
+\end{align}
+and the normalization condition is 
+\begin{align}
+\sum_{n,
+m,k}G_{\pm}(n,m)G_{\mp}(n,k)\phi(m)\phi^*(k)=1.
+\end{align}
+The expectation value of $\mathcal{N}$ in this state is 
+\begin{align}
+(\phi^{\pm}|\mathcal{N}|\phi^{\pm})=\sum_{n,m,k}G_{\pm}(n,m)G_{\mp}(n,k)n\phi^*(k)\phi(m)
+\end{align}
+\indent Next we construct the quasi-modes under the key assumption that $b_n$ is sufficiently smooth. In this case we have ingoing and outgoing solutions
+\begin{align}
+\phi^{\pm}_\omega(n)\sim i^{\mp n} n^{-\frac{1}{2}\pm \frac{i\omega}{2}},\hspace{10 mm}n\to \infty.
+\end{align}
+We look for a wavepacket localized around $n=n_0\gg1$, satisfying
+\begin{align}
+|\chi^{\pm})=\sum_n \chi(n)\phi^{\pm}_\omega(n)|n),\hspace{10 mm}\sum_n \frac{|\chi(n)|^2}{n}=1.
+\end{align}
+We want this to be a localized quasi-mode, with $|(\mathcal{L}-\omega)|\chi^{\pm})|\sim |(\log\mathcal{N}-\log n_0)|\chi^{\pm})|\sim 1$. We compute 
+\begin{align}
+(\mathcal{L}-\omega)|\chi^{\pm})&=\sum_n (b_n\chi(n-1)\phi^{\pm}_\omega(n-1)+b_{n+1}(n+1)\phi^{\pm}_\omega(n)-\omega(n)\phi^{\pm}_\omega(n))|n)\notag\\
+&=2\sum_n b_{n+1}\Delta\chi(n)\phi^{\pm}_\omega(n)|n).
+\end{align}
+The norm of this state is
+\begin{align}
+|(\mathcal{L}-\omega)|\chi^{\pm})|^2\sim 4\sum_nn |\Delta\chi(n)|^2.
+\end{align}
+A simple way to make this order one is to use a Gaussian in the tortoise coordinate $z=\log n/2$. Normalizing properly,
+\begin{align}
+\chi(n)=\frac{1}{(\pi\sigma^2)^{1/4}}\exp\left(-\frac{\log\left(\frac{n}{n_0}\right)^2}{2\sigma^2}\right)
+\end{align}
+Then we get 
+\begin{align}
+|(\mathcal{L}-\omega)|\chi^{\pm})|\sim\frac{1}{\sigma}\\
+|(\log \mathcal{N}-\log n_0)|\chi^{\pm})|\sim\sigma.
+\end{align}
+\indent We now check hyperbolicity. The time derivative of $\mathcal{N}$ is 
+\begin{align}
+\dot{N}_{\chi^{\pm}}&=-(\chi^{\pm}|\mathcal{P}|\chi^{\pm})\notag\\
+&=-2\sum_{n}b_{n+1}\text{Im}(\chi^*(n)(\phi^{\pm}_\omega)^*(n)\chi(n+1)\phi^{\pm}_\omega(n+1))\notag\\
+&=\pm 2 N_{\chi^{\pm}}.
+\end{align}
+It follows that 
+\begin{align}
+N_{\chi^{\pm}}(t)=e^{\pm 2t}N_{\chi^{\pm}}(0).
+\end{align}
+Therefore ingoing and outgoing quasi-modes are localized around the unstable and stable subspaces respectively. The Lyapunov exponent for $\chi^{+}$ is $+1$. Since $\chi^-$ eventually hits the core under forward time evolution, it does not have a well-defined Lyapunov exponent.\\
+%\indent The expectation value of the momentum can be written as a sum over local densities $\mathcal{P}_n$,
+%\begin{align}
+%(\chi|\mathcal{P}|\chi)&=2\sum_n b_n \text{Im}(\chi_n^*\chi_{n+1})\equiv \sum_n \mathcal{P}_n.
+%\end{align}
+%In our case we get
+%\begin{align}
+%\mathcal{P}_n=2\text{Re}(b_{2m+1}g_{m}^*f_{m+1}-b_{2m}f_m^*g_{m+1})
+%\end{align}
+%\section{An example}
+%We work out the standard example 
+%\begin{align}
+%b_n=\sqrt{n(n-1+\eta)}
+%\end{align}
+%The wavefunction is 
+%\begin{align}
+%\phi_\omega(n)=i^{-n}\sqrt{\frac{\Gamma(n+\eta)}{\Gamma(n+1)\Gamma(\eta)}}{_2F_1}\left(-n,\frac{\eta-i\omega}{2},\eta,2\right)
+%\end{align}
+%At large $n$, this becomes 
+%\begin{align}
+%\phi_\omega(n)\sim \frac{\sqrt{\Gamma(\eta)}}{2^{\frac{\eta}{2}}n^{\frac{1}{2}}}\left(\frac{i^{-n}}{\Gamma\left(\frac{\eta+i\omega}{2}\right)}(2n)^{\frac{i\omega}{2}}+\frac{i^n}{\Gamma\left(\frac{\eta-i\omega}{2}\right)}(2n)^{-\frac{i\omega}{2}}\right)
+%\end{align}
+\subsection{Non-hyperbolic toy models}
+Now we start breaking hyperbolicity. We consider the staggered model
+\begin{align}
+b_n=n+a(-1)^n
+\end{align}
+We make the ansatz 
+\begin{align}
+\phi_\omega(2m)=i^{2m}f_m,\hspace{10 mm}\phi_\omega(2m-1)=i^{2m-1}g_{m}.
+\end{align}
+The equation of motion for $g$ is
+\begin{align}
+b_{2m+1}b_{2m}g_{m+1}-(b_{2m}^2+b_{2m-1}^2-\omega^2)g_{m}+b_{2m-1}b_{2m-2}g_{m-1}=0,
+\end{align}
+with the solutions 
+\begin{align}
+g^{\pm}_{m}=m^{-\frac{1}{2}\pm \frac{i}{2}\sqrt{\omega^2-(2a)^2}}.
+\end{align}
+The equation of motion for $f$ gives
+\begin{align}
+f^{\pm}_m&=\frac{i(b_{2m+1}g_{m+1}-b_{2m}g_m)}{\omega}=\frac{i(-2a\pm i\sqrt{\omega^2-(2a)^2})}{\omega}g^{\pm}_m
+\end{align}
+The time evolution of $\mathcal{N}$ is now
+\begin{align}
+N_{\chi^{\pm}}(t)=e^{\pm 2\sqrt{1-\left(\frac{\omega}{2a}\right)^2}t}N_{\chi^{\pm}}(0).
+\end{align}
+As $\omega$ approaches the threshold $2a$, the exponential rate goes to zero, so the system is not hyperbolic. \\
+\indent A more general form of staggering is
+\begin{align}
+b_n=n+a\frac{(-1)^n}{(\log n)^\nu}. 
+\end{align}
+In this case the exponential growth rate goes to zero as $\omega\to 0$. 
+\subsection{Why some things don't fall}
+\section{Non-radial motion}
+\subsection{The geodesic flow}
+We take the geodesic flow on a Riemann surface which is a quotient of the upper half plane by $\Gamma$. We work in coordinates $(z,\theta)$ on the phase space, where $z=x+iy$ is the base space and $\theta$ parameterizes the angle of the tangent vector. We choose a conformal metric 
+\begin{align}
+ds^2=e^{2\phi(x,y)}(dx^2+dy^2).
+\end{align}
+The Hamiltonian is 
+\begin{align}
+H&=e^{-\phi}(\cos\theta \partial_x+\sin\theta\partial_y+(\partial_x\phi \sin\theta-\partial_y\phi\cos\theta)\partial_\theta)\\
+&=\eta_{+}+\eta_-
+\end{align}
+where we have introduced the operators
+\begin{align}
+\eta_+=e^{i\theta-\phi}(\partial+i(\partial\phi)\partial_\theta),\hspace{10 mm}\eta_-=e^{-i\theta-\phi}(\overline{\partial}-i(\overline{\partial}\phi)\partial_\theta).
+\end{align}
+Here $\eta_+$ and $\eta_-$ raise the $\theta$ momentum by 1, and we have defined the complex derivatives 
+\begin{align}
+\partial=\frac{1}{2}(\partial_x-i\partial_y),\hspace{10 mm}\overline{\partial}=\frac{1}{2}(\partial_x+i\partial_y).
+\end{align}\\
+\indent An arbitrary function on the phase space can be Fourier transformed,
+\begin{align}
+A(z)=\sum_m A_m(z)e^{im\theta}.
+\end{align}
+The $SL(2,\mathbf{Z})$ action is 
+\begin{align}
+(z,e^{i\theta})\to \left(\frac{az+b}{cz+d},\left(\frac{cz+d}{|cz+d|}\right)^{2}e^{i\theta}\right).
+\end{align}
+It follows that $A_m$ is an automorphic form of weight $2m$,
+\begin{align}
+A_m\left(\frac{az+b}{cz+d}\right)=\left(\frac{cz+d}{|cz+d|}\right)^{2m}A_m(z).
+\end{align}
+\indent We choose our complexity to be the Fourier mode $m^2$. Then the Liouvillian is tridiagonal in this basis. Let us start with the constant curvature case $\phi=-\log y$. Then we have 
+\begin{align}
+\eta_+=e^{i\theta}\left(y\partial-\frac{1}{2}\partial_\theta\right),\hspace{10 mm}\eta_-=e^{-i\theta}\left(y\overline{\partial}-\frac{1}{2}\partial_\theta\right).
+\end{align}
+This gives the $SL(2,\mathbf{R})$ algebra 
+\begin{align}
+[\eta_+,\eta_-]=\frac{V}{2} ,\hspace{10 mm}[V,\eta_{\pm}]=\pm \eta_{\pm},
+\end{align}
+where $V=-i\partial_\theta$. The operator space decomposes into representations with fixed Casimir, 
+\begin{align}
+\mathcal{C}|m,\rho)=\left(\frac{1}{4}+\rho^2\right)|m,\rho),\hspace{10 mm}\mathcal{C}=-V^2-V-4\eta_{-}\eta_+.
+\end{align}
+The raising operator acts on these representations, 
+\begin{align*}
+\eta_+|m,\rho)=b_{m+1}|m+1,\rho). 
+\end{align*}
+Taking the norm, 
+\begin{align}
+b_{m+1}^2=-(m,\rho|\eta_+\eta_-|m,\rho)=\frac{1}{4}(m,\rho|\mathcal{C}+V^2+V|m,\rho)=\rho^2+\left(m+\frac{1}{2}\right)^2.
+\end{align}
+Similarly 
+\begin{align}
+\eta_-|m,\rho)=b_m|m-1,\rho).
+\end{align}
+A general eigenstate of the Liouvillian therefore decomposes as
+\begin{align}
+|\phi)=\sum_{\rho,m}\phi_\omega(\rho,m)|\rho,m),
+\end{align}
+where we have the recursion 
+\begin{align}
+\omega\phi_\omega(\rho,m)=b_{m+1}\phi_\omega(\rho,m+1)+b_m\phi_\omega(\rho,m-1).
+\end{align}
+
+\subsection{SYK}
+Here we study the SYK model. For our operator $\mathcal{Q}$ we choose the operator size. The operator space of size $s$ is spanned by operators 
+\begin{align}
+\mathcal{O}_{i_1\cdots i_s}=\psi_{i_1}\cdots \psi_{i_s},\hspace{10 mm}i_j<i_{j+1}.
+\end{align}
+This space decomposes into representations of the permutation group on $N$ elements. We have a special singlet state in the operator space, 
+\begin{align}
+|s,0)=\sum_{i_1,\ldots,i_s}|\mathcal{O}_{i_1\cdots i_s}).
+\end{align}
+\indent Now consider the eigenmode equation 
+\begin{align}
+\mathcal{L}|\omega)=\omega |\omega).
+\end{align}
+We would like to obtain an equation for the projected component onto the singlet subspace. Write $P|\omega)=|\phi)$ and $Q|\omega)=|\psi)$, where $P$ is the singlet projection and $Q=1-P$ projects onto its complement. We get
+\begin{align}
+(\omega-PLP)|\phi)&=PLQ|\psi)\\
+(\omega-QLQ)|\psi)&=QLP|\phi).
+\end{align}
+Solving for $|\phi)$, 
+\begin{align}
+\left(\omega-PLP-PLQ\frac{1}{\omega-QLQ}QLP\right)|\phi)=0
+\end{align}
+
+\section{Hyperbolicity and meromorphy}
+In Krylov space the natural analog of a radial escape rate is the diagonal operator
+\begin{align}
+\mathcal{H}_{mn}=(b_{n+1}^2-b_n^2)\delta_{mn},
+\end{align}
+which appears in the commutator
+\begin{align}
+[\mathcal{L},\mathcal{P}]=2i\mathcal{H}.
+\end{align}
+The deformed generator
+\begin{align}
+\widetilde{\mathcal{L}}_\epsilon=\mathcal{L}-2i\epsilon \mathcal{H}
+\end{align}
+is the direct Krylov analog of adding an absorbing potential on the escaping tail. The point is that monotonicity of the Lanczos coefficients makes the imaginary part of $\widetilde{\mathcal{L}}_\epsilon$ sign definite at large $n$.
+
+\medskip
+\noindent
+\textbf{Proposition.} Suppose that there is an $N_0$ such that $b_{n+1}\ge b_n$ for $n\ge N_0$, and suppose in addition that
+\begin{align}
+h_n\equiv b_{n+1}^2-b_n^2\longrightarrow +\infty
+\end{align}
+as $n\to \infty$. Then the resolvent of $\widetilde{\mathcal{L}}_\epsilon$ is meromorphic for every $\epsilon>0$.
+
+\medskip
+\noindent
+\textbf{Proof.} Let
+\begin{align}
+Q_N=\sum_{n\ge N}|n)(n|
+\end{align}
+be the projector onto the tail. For any normalized state $|\psi)$ with $Q_N|\psi)=|\psi)$ we have
+\begin{align}
+\mathrm{Im}\,(\psi|(\widetilde{\mathcal{L}}_\epsilon-z)|\psi)
+=-2\epsilon(\psi|\mathcal{H}|\psi)-(\mathrm{Im}\,z)(\psi|\psi).
+\end{align}
+Let
+\begin{align}
+\underline{h}_N=\inf_{n\ge N} h_n.
+\end{align}
+Since $\mathcal{H}$ is diagonal, we have
+\begin{align}
+(\psi|\mathcal{H}|\psi)\ge \underline{h}_N(\psi|\psi),
+\end{align}
+and therefore
+\begin{align}
+\mathrm{Im}\,(\psi|(\widetilde{\mathcal{L}}_\epsilon-z)|\psi)
+\le -(2\epsilon \underline{h}_N+\mathrm{Im}\,z)(\psi|\psi).
+\end{align}
+Because $h_n\to +\infty$, we also have $\underline{h}_N\to +\infty$ as $N\to \infty$. Whenever $2\epsilon \underline{h}_N+\mathrm{Im}\,z>0$, the tail operator is invertible and obeys the bound
+\begin{align}
+\left\| \left(Q_N(\widetilde{\mathcal{L}}_\epsilon-z)Q_N\right)^{-1}\right\|
+\le \frac{1}{2\epsilon \underline{h}_N+\mathrm{Im}\,z}.
+\end{align}
+Now decompose Krylov space into the finite core and the tail,
+\begin{align}
+\mathcal{H}_K=(1-Q_N)\mathcal{H}_K\oplus Q_N\mathcal{H}_K.
+\end{align}
+Since the core is finite-dimensional, invertibility of $\widetilde{\mathcal{L}}_\epsilon-z$ reduces to invertibility of the corresponding Schur complement. The tail inverse above shows that the Schur complement is an analytic Fredholm family, and therefore the full resolvent is meromorphic.
+\hfill $\square$
+
+\medskip
+The important point is that what enters the proof is not just positivity of $h_n$, but positivity together with divergence on the tail. Pure monotonicity is not enough. For example, if $b_n\to b_\infty$, then $h_n\to 0$ and the tail is asymptotically translation invariant, so the deformed operator still has a continuum. In the hyperbolic regime discussed above, one instead expects
+\begin{align}
+h_n\sim cn,
+\end{align}
+which is more than enough for the meromorphy argument. Combining this proposition with the previous section, scalar Krylov hyperbolicity implies the meromorphy of the deformed resolvent $\left(z-\widetilde{\mathcal{L}}_\epsilon\right)^{-1}$.
+\section{More examples}
+\subsection{3D ising}
+\subsection{Scarred modes}
+\subsection{weak coupling}
+
+
+\appendix
+
+\section{Physicist's guide to spectra of self-adjoint operators}
+
+\subsection{Compact operators are approximately finite-rank maps}
+
+Compact operators play an important role in the proof of our proposition. Intuitively, an operator acting on an infinite-dimensional Hilbert space $K:\mH\to \mH$ is compact if and only if it can be well-approximated by a finite rank map. For every $\eta>0$, there exists an operator $K_\eta:\mH\to \mH$ such that 
+\begin{align}
+    \|K-K_\eta\|\leq \eta, \qquad \text{dim}(\text{Range}(K_\eta))<\infty
+\end{align}
+Here, finite-rank does not mean that \(K_\eta\) has a finite-dimensional domain.
+It still acts on the whole Hilbert space. Rather, it means that its image lies
+inside a finite-dimensional subspace:
+\[
+\operatorname{Ran}(K_\eta)\subset F_\eta,
+\qquad
+\dim F_\eta<\infty .
+\]
+Thus, a compact operator is approximately finite-dimensional in its action. At
+any fixed accuracy \(\eta\), it only produces finitely many effective output
+directions. The remaining infinitely many directions are suppressed below the
+chosen resolution.
+
+A simple example is a diagonal operator on \(\ell^2\). Let
+\[
+K e_n=\lambda_n e_n,
+\]
+where \(\{e_n\}\) is an orthonormal basis. Then \(K\) is compact precisely when
+\[
+\lambda_n\to 0 .
+\]
+Given \(\eta>0\), choose \(N\) such that \(|\lambda_n|<\eta\) for all \(n>N\),
+and define
+\[
+K_\eta e_n=
+\begin{cases}
+\lambda_n e_n, & n\le N,\\
+0, & n>N .
+\end{cases}
+\]
+Then \(K_\eta\) has finite rank and
+\[
+\|K-K_\eta\|=\sup_{n>N}|\lambda_n|<\eta .
+\]
+So \(K\) is well approximated by keeping only finitely many modes.
+
+A physical example is the thermal operator of a harmonic oscillator,
+\[
+K_\beta=e^{-\beta H},
+\qquad
+H=\hbar\omega\left(a^\dagger a+\frac12\right).
+\]
+In the energy eigenbasis,
+\[
+K_\beta |n\rangle
+=
+e^{-\beta\hbar\omega(n+1/2)}|n\rangle .
+\]
+The eigenvalues decay exponentially as \(n\to\infty\). Therefore \(K_\beta\) is
+compact. At inverse temperature \(\beta\), high-energy states are exponentially
+suppressed, and for any fixed accuracy one may truncate to finitely many energy
+levels:
+\[
+K_{\beta,N}|n\rangle=
+\begin{cases}
+e^{-\beta\hbar\omega(n+1/2)}|n\rangle, & n\le N,\\
+0, & n>N .
+\end{cases}
+\]
+The truncation error is
+\[
+\|K_\beta-K_{\beta,N}\|
+=
+e^{-\beta\hbar\omega(N+3/2)} .
+\]
+Thus the thermal operator acts, to finite resolution, like a finite-dimensional
+low-energy projection.
+
+This is the basic physical meaning of compactness: compact operators do not
+preserve arbitrarily fine distinctions among infinitely many high modes. They
+coarse-grain the Hilbert space so that, at any fixed resolution, only finitely
+many output directions remain visible.
+
+\subsection{Self-adjoint compact operators have discrete spectra}
+
+For a general bounded operator, compactness is not determined by the spectrum
+alone. However, for self-adjoint operators there is a clean spectral
+characterization.
+
+Let \(K=K^\ast\) be a bounded self-adjoint operator on a Hilbert space
+\(\mathcal H\). Then \(K\) is compact if and only if its nonzero spectrum
+consists of eigenvalues of finite multiplicity, with the only possible
+accumulation point at \(0\). Equivalently, for every \(\eta>0\), the spectral
+subspace
+\[
+\operatorname{Ran}\mathbf 1_{\{|\lambda|\ge \eta\}}(K)
+\]
+is finite-dimensional.
+
+This last formulation is often the most intuitive. It says that above any
+fixed spectral resolution \(\eta\), only finitely many modes are visible. The
+infinitely many remaining modes must have eigenvalues with
+\[
+|\lambda|<\eta .
+\]
+Thus they are suppressed below the chosen resolution.
+
+The spectral theorem makes this precise. A compact self-adjoint operator admits
+a decomposition
+\[
+K=\sum_j \lambda_j |u_j\rangle\langle u_j| ,
+\]
+where the vectors \(u_j\) are orthonormal eigenvectors and
+\[
+\lambda_j\in\mathbb R .
+\]
+If there are infinitely many nonzero eigenvalues, then
+\[
+\lambda_j\to 0 .
+\]
+The eigenvalue \(0\) may have infinite multiplicity, corresponding to an
+infinite-dimensional kernel.
+
+This is exactly the approximately finite-rank picture. Given a resolution
+\(\eta>0\), define
+\[
+K_\eta
+=
+\sum_{|\lambda_j|\ge \eta}
+\lambda_j |u_j\rangle\langle u_j| .
+\]
+Since there are only finitely many eigenvalues with
+\[
+|\lambda_j|\ge \eta ,
+\]
+the operator \(K_\eta\) has finite rank. Moreover,
+\[
+\|K-K_\eta\|\le \eta .
+\]
+So \(K\) can be approximated, in operator norm, by a finite-rank operator.
+
+An important consequence is that if $K$ is compact $K-z \mathbb{I}$ for $z>0$ is invertible up to a finite dimensional obstruction.
+
+Conversely, suppose that a bounded self-adjoint operator has infinitely many
+eigenvalues with magnitude bounded below by some \(\eta>0\). Then there are
+infinitely many orthonormal eigenvectors \(u_j\) such that
+\[
+\|Ku_j\|\ge \eta .
+\]
+The sequence \(\{u_j\}\) is bounded, but the sequence \(\{Ku_j\}\) has no
+convergent subsequence. Therefore \(K\) cannot be compact.
+
+Thus, for self-adjoint operators, compactness means that the spectrum becomes
+discrete away from zero and fades into zero at high mode number. In physics
+language:
+\[
+\text{compact self-adjoint}
+\quad\Longleftrightarrow\quad
+\text{only finitely many modes survive at any fixed resolution.}
+\]
+
+
+
+\subsection{Spectral theorem for self-adjoint operators}
+
+In quantum mechanics, observables are represented by self-adjoint operators.
+The spectral theorem says that a self-adjoint operator can be diagonalized, but
+the diagonalization may involve both sums and integrals. Finite-dimensional
+Hermitian matrices have only eigenvalues. Infinite-dimensional Hamiltonians can
+also have continuous spectral bands, corresponding to scattering states.
+
+Let \(A=A^\ast\) be a self-adjoint operator on a Hilbert space \(\mathcal H\).
+Its spectrum is
+\[
+\sigma(A)=\{\lambda\in\mathbb C: A-\lambda I \text{ is not invertible}\}.
+\]
+For self-adjoint \(A\),
+\[
+\sigma(A)\subset \mathbb R .
+\]
+
+A useful first split is
+\[
+\sigma(A)=\sigma_{\mathrm{disc}}(A)\cup\sigma_{\mathrm{ess}}(A),
+\]
+where the discrete spectrum consists of isolated eigenvalues of finite
+multiplicity. Thus
+\[
+\lambda\in\sigma_{\mathrm{disc}}(A)
+\]
+means that
+\[
+A\psi=\lambda\psi
+\]
+for some normalizable state \(\psi\), that
+\[
+\dim\ker(A-\lambda I)<\infty,
+\]
+and that \(\lambda\) is isolated from the rest of the spectrum.
+
+The essential spectrum is the complement:
+\[
+\sigma_{\mathrm{ess}}(A)=\sigma(A)\setminus\sigma_{\mathrm{disc}}(A).
+\]
+
+An operator is called Fredholm if its kernel and co-kernel are finite dimensional. The index of a Fredholm operator $X$ is $\text{dim}(\text{Ker} X)-\text{dim}(\text{coKer}(X))$. Therefore, a self-adjoint Fredholm operator has index zero. 
+Using this definition, we can describe the essential spectrum of self-adjoint operators as
+\[
+\lambda\in\sigma_{\mathrm{ess}}(A)
+\quad\Longleftrightarrow\quad
+A-\lambda I \text{ is not Fredholm}.
+\]
+
+Physically, the essential spectrum is the part of the spectrum that cannot be
+removed by changing only finitely many states. It is the stable, infinite-volume
+part of the spectrum. This is made precise using the following theorem 
+\begin{theorem}[Weyl's theorem on the invariance of essential spectrum]
+Let \(A=A^\ast\) be a self-adjoint operator on a Hilbert space \(\mathcal H\),
+and let \(K=K^\ast\) be compact. Then
+\[
+\sigma_{\mathrm{ess}}(A+K)
+=
+\sigma_{\mathrm{ess}}(A).
+\]
+Thus the essential spectrum is invariant under compact self-adjoint
+perturbations.
+\end{theorem}
+
+
+The point spectrum is the set of genuine eigenvalues:
+\[
+\sigma_{\mathrm p}(A)=
+\{\lambda\in\mathbb R:\ker(A-\lambda I)\neq\{0\}\}.
+\]
+These correspond to normalizable stationary states. For example, the harmonic
+oscillator Hamiltonian
+\[
+H_{\mathrm{osc}}
+=
+\hbar\omega\left(a^\dagger a+\frac12\right)
+\]
+has
+\[
+\sigma(H_{\mathrm{osc}})
+=
+\left\{\hbar\omega\left(n+\frac12\right):n=0,1,2,\ldots\right\}.
+\]
+Every spectral point is an isolated finite-multiplicity eigenvalue, so the
+spectrum is purely discrete.
+
+The continuous spectrum consists of those \(\lambda\) for which
+\(A-\lambda I\) has no normalizable zero mode, but nevertheless fails to have a
+bounded inverse. Physically, these are generalized eigenvalues. The free
+particle Hamiltonian
+\[
+H_{\mathrm{free}}=-\frac{\hbar^2}{2m}\Delta
+\]
+on \(L^2(\mathbb R^d)\) has
+\[
+\sigma(H_{\mathrm{free}})=[0,\infty).
+\]
+The formal eigenstates are plane waves
+\[
+e^{ik\cdot x},
+\qquad
+E=\frac{\hbar^2 |k|^2}{2m},
+\]
+but these are not normalizable elements of \(L^2(\mathbb R^d)\). Thus the
+spectrum is continuous, not point spectrum.
+
+For self-adjoint operators there is no residual spectrum. Therefore
+\[
+\sigma(A)=\sigma_{\mathrm p}(A)\cup\sigma_{\mathrm{cont}}(A).
+\]
+The continuous spectrum is always part of the essential spectrum:
+\[
+\sigma_{\mathrm{cont}}(A)\subseteq\sigma_{\mathrm{ess}}(A).
+\]
+
+The essential spectrum may also contain eigenvalues. These are eigenvalues that
+are not discrete. Define the essential point spectrum by
+\[
+\sigma_{\mathrm{p,ess}}(A)
+=
+\sigma_{\mathrm p}(A)\setminus\sigma_{\mathrm{disc}}(A).
+\]
+Then
+\[
+\sigma_{\mathrm{ess}}(A)
+=
+\sigma_{\mathrm{cont}}(A)
+\cup
+\sigma_{\mathrm{p,ess}}(A).
+\]
+Thus the essential spectrum consists of the continuous spectrum together with
+eigenvalues that fail to be isolated finite-multiplicity eigenvalues.
+
+There are two main ways an eigenvalue can be essential. First, it may have
+infinite multiplicity:
+\[
+\dim\ker(A-\lambda I)=\infty .
+\]
+A physical example is a Landau level for a charged particle in a uniform
+magnetic field on the infinite plane. The energies are discrete, but each
+Landau level has infinite degeneracy because the plane has infinite area. Thus
+the Landau levels belong to the essential spectrum.
+
+Second, an eigenvalue may fail to be isolated. This can happen if it is
+embedded in a continuum. In scattering theory, one sometimes encounters a
+normalizable bound state whose energy lies inside the continuum of scattering
+states. Such an embedded eigenvalue may have finite multiplicity, but it is not
+isolated from the rest of the spectrum, so it is essential rather than
+discrete.
+
+So, for self-adjoint operators, the essential spectrum contains:
+\[
+\text{continuous spectrum},
+\]
+\[
+\text{eigenvalues of infinite multiplicity},
+\]
+and
+\[
+\text{eigenvalues that are not isolated, such as embedded eigenvalues}.
+\]
+
+A familiar mixed example is the hydrogen atom. Its Hamiltonian has negative
+bound-state energies
+\[
+E_n=-\frac{13.6\,\mathrm{eV}}{n^2},
+\qquad n=1,2,\ldots,
+\]
+which form discrete point spectrum. These energies accumulate at \(0\). Above
+the ionization threshold, there is continuous spectrum
+\[
+[0,\infty),
+\]
+corresponding to scattering states of the electron and proton. Thus the
+negative bound states are discrete, while the continuum beginning at \(0\) is
+essential.
+
+For compact self-adjoint operators, the structure is especially simple. If
+\(K=K^\ast\) is compact, then
+\[
+\sigma_{\mathrm{ess}}(K)\subseteq\{0\}.
+\]
+All nonzero spectral points are isolated eigenvalues of finite multiplicity,
+and the only possible accumulation point is \(0\). This is why compact
+self-adjoint operators behave like infinite-dimensional Hermitian matrices
+whose eigenvalues fade away at high mode number.
+
+
+
+\subsection{Absolutely continuous spectrum are scattering states}
+
+Let \(A=A^\ast\) be a self-adjoint operator. The spectral theorem associates to
+\(A\) a projection-valued measure \(E_A\), so that
+\[
+A=\int_{\mathbb R}\lambda\,dE_A(\lambda).
+\]
+For each state \(\psi\in\mathcal H\), one obtains a scalar spectral measure
+\[
+\mu_\psi(B)=(\psi|E_A(B)|\psi).
+\]
+This measure tells us how the state \(\psi\) is distributed over spectral
+values.
+
+The continuous spectrum can be split according to the measure-theoretic type of
+\(\mu_\psi\). The absolutely continuous part is the part for which the spectral
+measure has a density with respect to Lebesgue measure:
+\[
+d\mu_\psi(\lambda)=\rho_\psi(\lambda)\,d\lambda .
+\]
+The corresponding spectral subspace is called the absolutely continuous
+subspace, and the associated spectrum is denoted
+\[
+\sigma_{\mathrm{ac}}(A).
+\]
+
+The remaining continuous part is the singular continuous spectrum,
+\[
+\sigma_{\mathrm{sc}}(A).
+\]
+It has no eigenvalue atoms, but its spectral measure is supported on sets of
+Lebesgue measure zero. Physically, this is more exotic: it is continuous, but
+not the ordinary continuum one encounters in elementary scattering theory.
+
+For ordinary Schrödinger scattering, the absolutely continuous spectrum is the
+scattering spectrum. For example, the free Hamiltonian
+\[
+H_0=-\frac{\hbar^2}{2m}\Delta
+\]
+on \(L^2(\mathbb R^d)\) has
+\[
+\sigma(H_0)=[0,\infty),
+\]
+and this spectrum is absolutely continuous. After Fourier transform,
+\[
+H_0
+\]
+acts by multiplication:
+\[
+\widehat{H_0\psi}(k)
+=
+\frac{\hbar^2|k|^2}{2m}\widehat\psi(k).
+\]
+Thus energy is labelled continuously by the momentum \(k\). The formal
+eigenstates are plane waves
+\[
+e^{ik\cdot x},
+\]
+which are not normalizable, but wave packets built from them propagate to
+spatial infinity. This is the basic meaning of a scattering state.
+
+More generally, for
+\[
+H=H_0+V(x),
+\]
+with \(V\) sufficiently localized, the absolutely continuous subspace describes
+states that asymptotically behave like free wave packets at large positive and
+negative times. In this sense,
+\[
+\sigma_{\mathrm{ac}}(H)
+\]
+is the part of the spectrum associated with transport to infinity.
+
+Thus the useful physics dictionary is
+\[
+\text{point spectrum}
+\quad\leftrightarrow\quad
+\text{normalizable bound states},
+\]
+\[
+\text{absolutely continuous spectrum}
+\quad\leftrightarrow\quad
+\text{scattering states},
+\]
+\[
+\text{singular continuous spectrum}
+\quad\leftrightarrow\quad
+\text{exotic continuous spectral behavior}.
+\]
+For many standard short-range quantum Hamiltonians, the singular continuous
+spectrum is absent, so the continuous spectrum is entirely absolutely
+continuous.
+
+
+\subsection{Compactness and Fredholm operators}
+
+We said that compact operators have discrete spectra with a potential essential spectrum $\{0\}$ which if it exists must be an accumulation point. Since every other point in the spectrum is discrete, it has finite multiplicity, so the operator $\mathbb{I}-\lambda X$ for $\lambda>0$ can be inverted up to an obstruction by a finite rank matrix.
+
+\begin{theorem}
+Let \(X=X^\ast\) be a bounded self-adjoint operator on an infinite-dimensional
+Hilbert space \(\mathcal H\). Then \(X\) is compact if and only if, for every
+\(\lambda\in\mathbb C\setminus\{0\}\), the operator
+\[
+I-\lambda X
+\]
+is Fredholm of index \(0\).
+\end{theorem}
+
+
+
+
+
+\section{Necessary and sufficient conditions for meromorphicity}
+
+
+\subsection{Holomorphic compact families have meromorphic resolvents}
+
+Let \(D\subset\mathbb C\) be a connected open domain, and let
+\[
+K(z):\mathcal H\to\mathcal H,
+\qquad z\in D,
+\]
+be a family of bounded operators. We say that \(K(z)\) is a holomorphic compact
+operator family if each \(K(z)\) is compact and if the map
+\[
+z\mapsto K(z)
+\]
+is holomorphic in operator norm. Equivalently, near every \(z_0\in D\),
+\[
+K(z)=\sum_{m=0}^{\infty}(z-z_0)^m K_m
+\]
+with convergence in operator norm, where each \(K_m\) is compact. 
+
+One should be careful about self-adjointness. A nonconstant holomorphic family
+cannot be self-adjoint for every complex \(z\). Instead, in applications one
+usually has self-adjointness only on a real slice:
+\[
+K(x)=K(x)^\ast,
+\qquad x\in D\cap\mathbb R .
+\]
+Equivalently, one often has the reality condition
+\[
+K(\overline z)=K(z)^\ast .
+\]
+Thus \(K(z)\) is holomorphic and compact in the complex domain, while its
+restriction to real \(z\) is a compact self-adjoint family.
+
+For each fixed \(z\), compactness implies that
+\[
+\sigma(K(z))\setminus\{0\}
+\]
+consists of isolated eigenvalues of finite multiplicity, with possible
+accumulation only at \(0\). In particular, if \(1\in\sigma(K(z))\), then
+\(1\) is an honest eigenvalue of finite multiplicity.
+
+The central consequence is the analytic Fredholm theorem.
+
+\begin{proposition}[Analytic Fredholm theorem]
+Let \(K(z)\) be a holomorphic compact operator family on a connected domain
+\(D\subset\mathbb C\). Suppose that there exists \(z_0\in D\) such that
+\[
+I-K(z_0)
+\]
+is invertible. Then
+\[
+(I-K(z))^{-1}
+\]
+is a meromorphic operator-valued function on \(D\).
+\end{proposition}
+
+The meaning is that the inverse exists away from isolated points of \(D\), and
+near each singular point \(z_\ast\) it has a Laurent expansion
+\[
+(I-K(z))^{-1}
+=
+\sum_{j=1}^{J}{A_{-j}\over (z-z_\ast)^j}
++
+A_0+A_1(z-z_\ast)+\cdots ,
+\]
+where the singular coefficients \(A_{-j}\) are finite-rank operators.
+
+The intuition is the following. Since \(K(z)\) is compact, it is approximately
+finite-rank. Therefore \(I-K(z)\) is an identity operator plus an
+approximately finite-dimensional correction. Infinite-dimensional invertibility
+can fail only through finitely many effective directions. Locally, the problem
+reduces to the inversion of a finite-dimensional analytic matrix. Such an
+inverse has the form
+\[
+M(z)^{-1}={\operatorname{adj}M(z)\over \det M(z)} ,
+\]
+so its singularities are poles at the zeros of \(\det M(z)\).
+
+Thus holomorphic compact families are the natural setting in which continuum
+spectral obstructions are replaced by isolated meromorphic singularities.
+On the real self-adjoint slice, the condition that \(I-K(x)\) fails to be
+invertible means that \(1\) is an eigenvalue of the compact self-adjoint
+operator \(K(x)\). Since this is a finite-dimensional obstruction, analytic
+continuation in \(z\) produces poles rather than branch cuts or continuous
+spectral bands.
+
+\subsection{Converse: from Meromorphicity to compactness}
+
+Note that the converse of the result above does not hold: there are operators, e.g., $K(z)=z I$, that are non-compact, but $(1-K(z))^{-1}=(1-z)^{-1}I$ is meromorphic. Note that the pole at $z=1$ is multiplied by the operator $I$, which has infinite rank. To rule this out, we can further require that the poles have {\it finite rank}. Then, we have the following statement:
+
+
+\begin{theorem}
+Let \(D\subset\mathbb C\) be connected, and let
+\[
+K(z):\mathcal H\to\mathcal H
+\]
+be a holomorphic family of bounded operators. Assume that \(K(z)\) is
+self-adjoint on the real slice, in the sense that
+\[
+K(\overline z)=K(z)^\ast .
+\]
+Suppose also that for each \(\lambda\neq 0\), the operator
+\[
+I-\lambda K(z)
+\]
+is invertible for at least one \(z\in D\).
+
+Then the following are equivalent:
+
+\[
+K(z)\text{ is compact for every }z\in D,
+\]
+
+and
+
+\[
+(I-\lambda K(z))^{-1}
+\]
+is meromorphic on \(D\), with finite-rank principal parts at its poles, for
+every \(\lambda\neq 0\).
+\end{theorem}
+
+
+In essence, we are finding that meromorphicity is equivalent to the statement that the failure to the existence of an inverse can be quantified by a finite matrix. This intuition is captured by the following theorem:
+
+\begin{theorem}[Compact analytic Fredholm principle]
+Let \(D\subset\mathbb C\) be connected. Suppose
+\[
+T(z)=T_0(z)+K(z),
+\]
+where \(T_0(z)\) is a holomorphic family of boundedly invertible operators and
+\(K(z)\) is a holomorphic compact operator family. If \(T(z)\) is invertible for
+at least one point \(z_0\in D\), then
+\[
+T(z)^{-1}
+\]
+is meromorphic on \(D\). Moreover, the principal part at each pole is
+finite-rank.
+\end{theorem}
+
+\begin{proof}
+Factor out the invertible background:
+\[
+T(z)=T_0(z)\left(I+T_0(z)^{-1}K(z)\right).
+\]
+The family
+\[
+T_0(z)^{-1}K(z)
+\]
+is holomorphic and compact. Hence
+\[
+I+T_0(z)^{-1}K(z)
+\]
+is an analytic Fredholm family of index \(0\). Since \(T(z)\) is invertible at
+one point, the analytic Fredholm theorem implies that
+\[
+\left(I+T_0(z)^{-1}K(z)\right)^{-1}
+\]
+is meromorphic on \(D\), with finite-rank principal parts. Therefore
+\[
+T(z)^{-1}
+=
+\left(I+T_0(z)^{-1}K(z)\right)^{-1}T_0(z)^{-1}
+\]
+is meromorphic on \(D\), with finite-rank principal parts.
+\end{proof}
+
+
+
+\section{Integrating out the tail}
+
+The operator $H$ acts on an infinite-dimensional Hilbert space $\mathcal{H}_K$.
+
+
+We give a slightly more detailed proof of the proposition used in the main text.
+Let \(\mathcal H_K\) denote the Krylov Hilbert space with orthonormal basis
+\(\{|n)\}_{n\ge 0}\). We assume that \(L\) is the self-adjoint Jacobi operator
+defined by the Lanczos coefficients, and that
+\[
+H|n)=h_n|n),
+\qquad
+h_n=b_{n+1}^2-b_n^2 .
+\]
+For \(\epsilon>0\), define
+\[
+\widetilde L_\epsilon=L-2i\epsilon H .
+\]
+
+\textbf{Proposition:}
+Suppose that there exists \(N_0\) such that \(b_{n+1}\ge b_n\) for
+\(n\ge N_0\), and suppose in addition that
+\[
+h_n=b_{n+1}^2-b_n^2\longrightarrow +\infty .
+\]
+Then for every \(\epsilon>0\), the resolvent
+\[
+(\widetilde L_\epsilon-z)^{-1}
+\]
+is meromorphic on \(\mathbb C\).
+
+
+\begin{proof}
+For \(N\ge 0\), let
+\[
+\Pi_N=\sum_{n\ge N}|n)(n|
+\]
+be the projection onto the Krylov tail, and set
+\[
+\mu_N=\inf_{n\ge N}h_n .
+\]
+Since \(h_n\to+\infty\), we have
+\[
+\mu_N\longrightarrow+\infty
+\qquad\text{as }N\to\infty .
+\]
+
+Let \(z_\ast\in\mathbb C\) and fix $\epsilon>0$. Choose \(N\) so large that
+\[
+2\epsilon\mu_N+\operatorname{Im}z_\ast>0 .
+\]
+Then the same inequality holds in a small neighborhood \(U\) of \(z_\ast\):
+there is a constant \(c_U>0\) such that
+\[
+2\epsilon\mu_N+\operatorname{Im}z\ge c_U,
+\qquad z\in U .
+\]
+
+Consider the tail operator
+\[
+D_{N,\epsilon}(z)=\Pi_N(\widetilde L_\epsilon-z)\Pi_N
+\]
+acting on \(\Pi_N\mathcal H_K\). If \(\Pi_N|\psi)=|\psi)\), then
+\[
+\operatorname{Im}(\psi|D_N(z)|\psi)
+=
+-2\epsilon(\psi|H|\psi)-(\operatorname{Im}z)(\psi|\psi).
+\]
+Because \(H\) is diagonal and \(H\ge \mu_N\) on the tail,
+\[
+(\psi|H|\psi)\ge \mu_N(\psi|\psi).
+\]
+Therefore, for \(z\in U\),
+\[
+-\operatorname{Im}(\psi|D_N(z)|\psi)
+\ge
+\left(2\epsilon\mu_N+\operatorname{Im}z\right)(\psi|\psi)
+\ge
+c_U\|\psi\|^2 .
+\]
+It follows that
+\[
+\|D_N(z)\psi\|\ge c_U\|\psi\| .
+\]
+Thus \(D_N(z)\) is injective and has closed range. Applying the same estimate to
+the adjoint \(D_N(z)^*\) shows that the range is dense. Hence the range is all
+of \(\Pi_N\mathcal H_K\), and \(D_N(z)\) is invertible. Moreover,
+\[
+\|D_N(z)^{-1}\|\le {1\over c_U},
+\qquad z\in U .
+\]
+Since \(D_N(z)=D_N(z_0)-(z-z_0)\Pi_N\), the inverse \(D_N(z)^{-1}\) depends
+analytically on \(z\) throughout \(U\).
+
+Now, decompose the Krylov space as
+\[
+\mathcal H_K=(1-\Pi_N)\mathcal H_K\oplus \Pi_N\mathcal H_K .
+\]
+The first summand is finite-dimensional. With respect to this decomposition,
+\(\widetilde L_\epsilon-z\) has block form
+\[
+\widetilde L_\epsilon-z
+=
+\begin{pmatrix}
+A_N(z) & B_N \\
+C_N & D_N(z)
+\end{pmatrix},
+\]
+where \(D_N(z)\) is the tail block. Since \(D_N(z)\) is invertible on \(U\),
+invertibility of \(\widetilde L_\epsilon-z\) is equivalent to invertibility of
+the finite-dimensional Schur complement
+\[
+S_N(z)=A_N(z)-B_ND_N(z)^{-1}C_N .
+\]
+The operator \(S_N(z)\) acts on the finite-dimensional space
+\((1-\Pi_N)\mathcal H_K\), and its matrix entries are analytic functions of
+\(z\). Therefore \(S_N(z)^{-1}\) is meromorphic on \(U\), with possible poles
+only at the zeros of \(\det S_N(z)\).
+
+The block inverse formula expresses \((\widetilde L_\epsilon-z)^{-1}\) in terms
+of \(D_N(z)^{-1}\), \(S_N(z)^{-1}\), and the finite-rank blocks \(B_N,C_N\).
+Since \(D_N(z)^{-1}\) is analytic and \(S_N(z)^{-1}\) is meromorphic on \(U\),
+the full resolvent is meromorphic on \(U\).
+
+Because \(z_\ast\in\mathbb C\) was arbitrary, the resolvent is meromorphic
+locally at every point of the complex plane. Hence
+\[
+(\widetilde L_\epsilon-z)^{-1}
+\]
+is meromorphic on \(\mathbb C\).
+\end{proof}
+
+\paragraph{Intuition.}
+The operator \(-2i\epsilon H\) is an absorbing imaginary potential on the
+Krylov tail. The condition \(h_n\to+\infty\) says that this absorber becomes
+stronger and stronger as one moves to large Krylov index. Thus, for any fixed
+spectral parameter \(z\), we can move the tail cutoff \(N\) far enough out that
+the imaginary part of the tail operator has a definite sign. A state supported
+far out on the tail cannot behave like a freely propagating continuum state,
+because it is damped before it can escape to infinity.
+
+After cutting off the tail, the remaining core is finite-dimensional. A
+finite-dimensional block can only produce isolated poles, through the zeros of
+a determinant. Therefore the complex deformation removes the continuum
+contribution from the tail, leaving only meromorphic singularities.
+
+
+\end{document}
