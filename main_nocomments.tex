@@ -1055,12 +1055,24 @@ We said that compact operators have discrete spectra with a potential essential 
 
 \begin{theorem}
 Let \(X=X^\ast\) be a bounded self-adjoint operator on an infinite-dimensional
-Hilbert space \(\mathcal H\). Then \(X\) is compact if and only if, for every
-\(\lambda\in\mathbb C\setminus\{0\}\), the operator
+Hilbert space \(\mathcal H\). Then the following are equivalent:
+\begin{enumerate}
+\item \(X\) is compact.
+\item For every \(z\in\mathbb R\setminus\{0\}\), the operator
 \[
-I-\lambda X
+X-zI
 \]
 is Fredholm of index \(0\).
+\item The resolvent
+\[
+z\mapsto (X-zI)^{-1}
+\]
+is a meromorphic operator-valued function on
+\[
+\mathbb C\setminus\{0\},
+\]
+with finite-rank principal parts at all poles.
+\end{enumerate}
 \end{theorem}
 
 
