@@ -680,6 +680,76 @@ which is more than enough for the meromorphy argument. Combining this propositio
 
 \appendix
 
+\section{Complex Scaling Method}
+
+
+
+\section{Key mathematical statements}
+
+This appendix provides the rigorous operator-theoretic foundation necessary for applications in quantum scattering theory, resonant states (such as Gamow vectors), and complex scaling methods where the Hamiltonian loses self-adjointness and the resolvent's pole structure becomes critical.
+
+\subsection{Definitions and Setup}
+Let $\mathcal{H}$ be a complex Hilbert space, and let $\mathcal{B}(\mathcal{H})$ denote the algebra of bounded linear operators on $\mathcal{H}$. Let $X: \mathcal{D}(X) \subset \mathcal{H} \to \mathcal{H}$ be a closed, densely defined linear operator. 
+
+Recall that an operator $T$ is \textbf{Fredholm} if its range $\text{Ran}(T)$ is closed, and both its nullity $\alpha(T) = \dim \ker(T)$ and its defect $\beta(T) = \dim(\mathcal{H} / \text{Ran}(T))$ are finite. The \textbf{index} of a Fredholm operator is $\text{ind}(T) = \alpha(T) - \beta(T)$.
+
+An operator-valued function $F: U \to \mathcal{B}(\mathcal{H})$ is \textbf{finitely meromorphic} on a domain $U \subset \mathbb{C}$ if it is analytic on $U$ except for a discrete set of points $P \subset U$ (the poles), and at each pole $z_0 \in P$, the coefficients of the singular part of the Laurent expansion of $F(z)$ around $z_0$ are finite-rank operators.
+
+\subsection{Theorem Statement}\label{thmFredholm}
+\begin{theorem}
+Let $U \subseteq \mathbb{C}$ be a connected open set. For a closed, densely defined operator $X$, the resolvent $R(z, X) = (X - zI)^{-1}$ is a finitely meromorphic operator-valued function on $U$ if and only if the following two conditions hold:
+\begin{enumerate}
+    \item For every $z \in U$, the operator $(X - zI)$ is a Fredholm operator of index zero.
+    \item There exists at least one point $z_0 \in U$ such that $(X - z_0I)$ is continuously invertible (i.e., $z_0$ is in the resolvent set $\rho(X)$).
+\end{enumerate}
+\end{theorem}
+
+\subsection{Proof Outline}
+
+\begin{proof}[Proof of Sufficiency (Conditions $\Rightarrow$ Meromorphic Resolvent)]
+Assume conditions (1) and (2) hold. Since $X - zI$ is Fredholm of index zero for all $z \in U$, we can pick an arbitrary point $w \in U$. Because $\text{ind}(X - wI) = 0$, we can decompose $\mathcal{H}$ into orthogonal direct sums:
+\begin{align*}
+    \mathcal{H} &= \ker(X - wI) \oplus \mathcal{H}_1 \\
+    \mathcal{H} &= \text{Ran}(X - wI) \oplus \mathcal{H}_2
+\end{align*}
+Because the index is zero, $\dim \ker(X - wI) = \dim \mathcal{H}_2 < \infty$. Therefore, there exists a finite-rank operator $K$ mapping $\ker(X - wI)$ bijectively onto $\mathcal{H}_2$ and vanishing on $\mathcal{H}_1$.
+
+Consider the perturbed operator $(X - wI) + K$. This operator is a continuous bijection from $\mathcal{D}(X)$ to $\mathcal{H}$, and since $X$ is closed, it has a bounded inverse by the Bounded Inverse Theorem. We can rewrite the spectral family as:
+\begin{align*}
+    (X - zI) &= (X - wI + K) - K - (z - w)I \\
+    (X - zI) &= \left[ I - \left( K + (z - w)I \right) (X - wI + K)^{-1} \right] (X - wI + K)
+\end{align*}
+
+Let $A(z) = \left( K + (z - w)I \right) (X - wI + K)^{-1}$. Notice that $A(z)$ is an analytic family of bounded operators, and because $K$ is finite-rank, $A(w)$ is a compact operator. In fact, $A(z)$ is a compact operator for all $z$. By the \textbf{Analytic Fredholm Theorem}, the operator-valued function $[I - A(z)]^{-1}$ is either nowhere invertible on $U$, or it is meromorphic on $U$ with finite-rank residues. 
+
+By Condition (2), there is a point $z_0 \in U$ where $(X - z_0I)$ is invertible, which implies $[I - A(z_0)]$ is invertible. Thus, the ``nowhere invertible'' case is ruled out. Therefore, $[I - A(z)]^{-1}$ is meromorphic on $U$, and since $(X - wI + K)^{-1}$ is bounded, the resolvent $R(z, X) = (X - wI + K)^{-1} [I - A(z)]^{-1}$ is finitely meromorphic on $U$.
+\end{proof}
+
+\begin{proof}[Proof of Necessity (Meromorphic Resolvent $\Rightarrow$ Conditions)]
+Assume $R(z, X)$ is finitely meromorphic on $U$. The domain $U$ can be split into the analytic set $U \setminus P$ and the discrete set of poles $P$. For any $z \in U \setminus P$, $R(z, X)$ is bounded. Therefore, $(X - zI)$ is a bijection from $\mathcal{D}(X)$ to $\mathcal{H}$, making it a Fredholm operator of index zero. This immediately satisfies Condition (2).
+
+For a pole $z_p \in P$, by definition of finite meromorphy, the resolvent has a Laurent expansion:
+\[ R(z, X) = \sum_{k=1}^N \frac{B_{-k}}{(z - z_p)^k} + H(z) \]
+where $B_{-k}$ are finite-rank operators and $H(z)$ is analytic at $z_p$. From the fundamental resolvent identity $(X - zI)R(z, X) = I$, we can evaluate this near $z_p$:
+\[ (X - zI) H(z) = I - (X - zI) \sum_{k=1}^N \frac{B_{-k}}{(z - z_p)^k} \]
+Taking the limit as $z \to z_p$, the right side must be regular, meaning the singular terms cancel, leaving a relation of the form:
+\[ (X - z_pI) H(z_p) = I - C \]
+where $C$ is a finite-rank operator derived from $B_{-1}$. Because $I - C$ is a compact perturbation of the identity, it is Fredholm of index zero. The product of a closed operator and a bounded analytic operator yielding a Fredholm index zero operator implies that $(X - z_pI)$ must itself have a closed range and finite defect. A symmetric argument using $R(z, X)(X - zI) = I_{\mathcal{D}(X)}$ ensures the nullity is finite. Since the index of $X - zI$ is continuous on connected components of the Fredholm domain, and $\text{ind}(X - zI) = 0$ on $U \setminus P$, it follows that $\text{ind}(X - z_pI) = 0$ as well. Thus, Condition (1) is satisfied for all $z \in U$.
+\end{proof}
+
+\subsection{Physics Implications}
+If we apply this theorem to a quantum Hamiltonian $H$, $U$ represents the complex energy plane. Condition (2) is trivially satisfied if $H$ has a standard resolvent set (e.g., if $H$ is self-adjoint, any non-real $z$ works). More generally, specializing Theorem \ref{thmFredholm} to self-adjoint operators $X$, we have
+
+\begin{theorem}
+    
+\end{theorem}
+
+
+
+
+
+Condition (1) dictates that to analytically continue the resolvent across the continuous spectrum to uncover resonance poles (where $(H - zI)^{-1}$ is meromorphic), we must ensure that our complex deformation (such as the Aguilar-Balslev-Combes-Simon complex scaling) preserves the Fredholm index zero property of $H(\theta) - zI$. The finite-rank residues at the poles correspond precisely to the projection operators onto the non-normalizable Gamow states.
+
 \section{Physicist's guide to spectra of self-adjoint operators}
 
 \subsection{Compact operators are approximately finite-rank maps}
